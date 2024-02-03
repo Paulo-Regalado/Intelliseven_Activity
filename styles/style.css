@@ -1,0 +1,37 @@
+* {
+    /* Add your desired styles for the navbar links here */
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 20px;
+}
+h1{
+    font-weight: bold;
+}
+
+#grad1 {
+    position: absolute;
+    width: 500px;
+    height: 100px;
+    top: 100%;
+    left: 100%;
+    background-color: rgba(255, 192, 203, 0.3);
+    transform: translate(-100%, -100%);
+    z-index: -1;
+    border-radius: 50%;
+    box-shadow: 0 0 150px 150px rgba(255, 192, 203, 0.3);
+}
+
+.img_container {
+    width: 100%;
+}
+/* @media screen and (max-width: 1200px) {
+    #form_input{
+        width: 100%;
+    }
+  } */
+
+
+/* .text_container {
+    width: 404px;
+    height: 264px;
+    text-align: left;
+} */

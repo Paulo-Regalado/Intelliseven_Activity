@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ICON -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/home_chat.css">
+    <title>Home Chat</title>
+</head>
+
+<body>
+    <!-- <div class="wrapper d-flex">
+        <div class="sidebar bg-secondary d-flex flex-column" h-100>
+            <img src="/resources/IntelliSeven_Logo 1.png" alt="" width="62" height="41">
+            <div class="d-flex flex-column justify-content-between ps-2">
+
+                <img src="/resources/bxs_message.png" alt="" width="40" height="40">
+
+                <img src="/resources/material-symbols_group.png" alt="" width="40" height="40">
+                <img src="/resources/tabler_map-pin-filled.png" alt="" width="40" height="40">
+
+            </div>
+
+            <div class="">
+                <img src="/resources/Ellipse 7.png" alt="">
+            </div>
+        </div>
+
+        <div class="inbox bg-primary">
+
+
+
+        </div>
+
+        <div class="message">
+
+
+        </div>
+
+
+    </div> -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-auto border sticky-top d-flex">
+                <div class="d-flex flex-sm-column flex-row flex-nowrap align-items-center sticky-top">
+                    <a href="/" class="d-block pt-2">
+                        <img src="/resources/IntelliSeven_Logo 1.png" alt="" width="62" height="41">
+                    </a>
+                    <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link py-3 px-2">
+                                <img src="/resources/bxs_message.png" alt="" width="40" height="40">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link py-3 px-2">
+                                <img src="/resources/material-symbols_group.png" alt="" width="40" height="40">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link py-3 px-2">
+                                <img src="/resources/tabler_map-pin-filled.png" alt="" width="40" height="40">
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="profile mt-auto mb-3 d-flex align-items-end">
+                        <a href=""><img src="/resources/Ellipse 7.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="chats" class="col-3 border p-3 d-flex flex-column">
+                <div class="d-flex justify-content-between w-100">
+                    <h3>Chats</h3>
+                    <a href="" class=""><img src="/resources/add.png" alt="" width="30" height="30"></a>
+                </div>
+
+                <div class="form-floating mb-2">
+                    <input class="form-control form-control rounded-pill" type="text" placeholder=".form-control-sm">
+                    <label for="floatingInput"><i class="bi bi-search me-1"></i>Search message</label>
+                </div>
+
+                <div class="inbox_content">
+
+
+                    <a href="" class="inbox_mess text-decoration-none text-dark">
+                        <div class="d-flex mt-2">
+                            <div class="">
+                                <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
+                                <img class="secondary_pic" src="/resources/Ellipse 15.png" alt="" width="40"
+                                    height="40">
+                            </div>
+
+                            <div class="">
+                                <span class="name">SMJ Law Firm</span>
+                                <p>Madel: Already change your schedule atty.</p>
+                            </div>
+                            <div class="ms-2">
+                                <span class="name ps-3 text-primary"><i class="bi bi-dot fs-5"></i></span>
+                                <p class="ps-1">1m</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="" class="inbox_mess text-decoration-none text-dark">
+                        <div class="d-flex">
+                            <div class="">
+                                <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
+                                <img class="secondary_pic" src="/resources/Ellipse 15.png" alt="" width="40"
+                                    height="40">
+                            </div>
+
+                            <div class="">
+                                <span class="name">SMJ Law Firm</span>
+                                <p>Madel: Already change your schedule atty.</p>
+                            </div>
+                            <div class="ms-2">
+                                <span class="name ps-3 text-primary"><i class="bi bi-dot fs-5"></i></span>
+                                <p class="ps-1">1m</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="" class="inbox_mess text-decoration-none text-dark">
+                        <div class="d-flex">
+                            <div class="">
+                                <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
+                                <img class="secondary_pic" src="/resources/Ellipse 15.png" alt="" width="40"
+                                    height="40">
+                            </div>
+
+                            <div class="">
+                                <span class="name">SMJ Law Firm</span>
+                                <p>Madel: Already change your schedule atty.</p>
+                            </div>
+                            <div class="ms-2">
+                                <span class="name ps-3 text-primary"><i class="bi bi-dot fs-5"></i></span>
+                                <p class="ps-1">1m</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="" class="inbox_mess text-decoration-none text-dark">
+                        <div class="d-flex">
+                            <div class="">
+                                <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
+                                <img class="secondary_pic" src="/resources/Ellipse 15.png" alt="" width="40"
+                                    height="40">
+                            </div>
+
+                            <div class="">
+                                <span class="name">SMJ Law Firm</span>
+                                <p>Madel: Already change your schedule atty.</p>
+                            </div>
+                            <div class="ms-2">
+                                <span class="name ps-3 text-primary"><i class="bi bi-dot fs-5"></i></span>
+                                <p class="ps-1">1m</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="" class="inbox_mess text-decoration-none text-dark">
+                        <div class="d-flex">
+                            <div class="">
+                                <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
+                                <img class="secondary_pic" src="/resources/Ellipse 15.png" alt="" width="40"
+                                    height="40">
+                            </div>
+
+                            <div class="">
+                                <span class="name">SMJ Law Firm</span>
+                                <p>Madel: Already change your schedule atty.</p>
+                            </div>
+                            <div class="ms-2">
+                                <span class="name ps-3 text-primary"><i class="bi bi-dot fs-5"></i></span>
+                                <p class="ps-1">1m</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="" class="inbox_mess text-decoration-none text-dark">
+                        <div class="d-flex">
+                            <div class="">
+                                <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
+                                <img class="secondary_pic" src="/resources/Ellipse 15.png" alt="" width="40"
+                                    height="40">
+                            </div>
+
+                            <div class="">
+                                <span class="name">SMJ Law Firm</span>
+                                <p>Madel: Already change your schedule atty.</p>
+                            </div>
+                            <div class="ms-2">
+                                <span class="name ps-3 text-primary"><i class="bi bi-dot fs-5"></i></span>
+                                <p class="ps-1">1m</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="" class="inbox_mess text-decoration-none text-dark">
+                        <div class="d-flex">
+                            <div class="">
+                                <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
+                                <img class="secondary_pic" src="/resources/Ellipse 15.png" alt="" width="40"
+                                    height="40">
+                            </div>
+
+                            <div class="">
+                                <span class="name">SMJ Law Firm</span>
+                                <p>Madel: Already change your schedule atty.</p>
+                            </div>
+                            <div class="ms-2">
+                                <span class="name ps-3 text-primary"><i class="bi bi-dot fs-5"></i></span>
+                                <p class="ps-1">1m</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="" class="inbox_mess text-decoration-none text-dark">
+                        <div class="d-flex">
+                            <div class="">
+                                <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
+                                <img class="secondary_pic" src="/resources/Ellipse 15.png" alt="" width="40"
+                                    height="40">
+                            </div>
+
+                            <div class="">
+                                <span class="name">SMJ Law Firm</span>
+                                <p>Madel: Already change your schedule atty.</p>
+                            </div>
+                            <div class="ms-2">
+                                <span class="name ps-3 text-primary"><i class="bi bi-dot fs-5"></i></span>
+                                <p class="ps-1">1m</p>
+                            </div>
+                        </div>
+                    </a>
+
+
+
+                </div>
+
+
+                <!-- 
+                <div class="d-flex">
+                    <img src="/resources/Ellipse 16.png" alt="" width="40" height="40">
+                    <span class="ms-4">
+                        <span class="name">Mansala Law Firm</span>
+                        <p>Atty. Robert: I can’t edit the description for.</p>
+                    </span>
+                    <span>
+                        <span class="name ps-3 text-primary"><i class="bi bi-dot"></i></span>
+                        <p class="ps-1">1m</p>
+                    </span>
+                </div> -->
+
+
+            </div>
+
+            <div class="col-sm px d-flex flex-column">
+
+                <div id="message" class="row border">
+                    <div class="col d-flex pt-3">
+                        <div class="d-flex align-items-center w-100">
+                            <div class="img_wrapper d-flex">
+                                <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
+                                <img id="header_img" src="/resources/Ellipse 8.png" alt="" width="40" height="40">
+
+                            </div>
+                            <div>
+                                <span class="name">SMJ Law Firm</span>
+                            </div>
+
+                            <div class="ms-auto">
+                                <i class="bi bi-plus-circle me-2"></i>
+                                <a href="#" id="showMoreButton" class="text-decoration-none text-dark"><i
+                                        class="bi bi-three-dots"></i></a>
+                            </div>
+                        </div>
+                        <!-- <div>
+                          
+                        </div>
+                        <span class="name">SMJ Law Firm</span>
+                        <div class="d-flex">
+                            <i class="bi bi-plus-circle"></i>
+                            <i class="bi bi-three-dots"></i>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div id="content" class="row p-2">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col text-center">
+                                <span id="date">Sun, Aug 20 at 5:45 PM</span>
+                            </div>
+                        </div>
+
+                        <!-- Container with fixed width -->
+                        <div class="w-50">
+
+                            <div class="row mb-3">
+                                <div>
+                                    <div class="d-flex">
+                                        <div class="">
+                                            <img src="/resources/Ellipse 12.png" alt="" width="39px" height="39px">
+                                        </div>
+
+                                        <div class="d-flex flex-column ms-2">
+                                            <span class="person_name ms-2">Madel</span>
+                                            <span class="sent_message p-2">I update the calendar and
+                                                re-reschedule your new
+                                                hearing Atty.
+                                                Mansalas.</span>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="row mb-3">
+                                <div>
+                                    <div class="d-flex">
+                                        <div class="">
+                                            <img src="/resources/Ellipse 13.png" alt="" width="39px" height="39px">
+                                        </div>
+
+                                        <div class="d-flex flex-column ms-2">
+                                            <span class="person_name ms-2">Atty. Raphael</span>
+                                            <span class="sent_message p-2">Noted. Thank you.</span>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="row mb-3">
+                                <div>
+                                    <div class="d-flex">
+                                        <div class="">
+                                            <img src="/resources/Ellipse 7.png" alt="" width="39px" height="39px">
+                                        </div>
+
+                                        <div class="d-flex flex-column ms-2">
+                                            <span class="person_name ms-2">Madel</span>
+                                            <span class="sent_message p-2">I update the calendar and
+                                                re-reschedule your new
+                                                hearing Atty.
+                                                Mansalas.</span>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col text-center">
+                                <span id="date">Wed, Dec 20 at 11:31 AM</span>
+                            </div>
+                        </div>
+
+                        <div class="w-50">
+
+                            <div class="row mb-3">
+                                <div>
+                                    <div class="d-flex">
+                                        <div class="">
+                                            <img src="/resources/Ellipse 7.png" alt="" width="39px" height="39px">
+                                        </div>
+
+                                        <div class="d-flex flex-column ms-2">
+                                            <span class="person_name ms-2">Madel</span>
+                                            <span class="sent_message p-2">I update the calendar and
+                                                re-reschedule your new
+                                                hearing Atty.
+                                                Mansalas.</span>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="row mb-3">
+                                <div>
+                                    <div class="d-flex">
+                                        <div class="">
+                                            <img src="/resources/Ellipse 7.png" alt="" width="39px" height="39px">
+                                        </div>
+
+                                        <div class="d-flex flex-column ms-2">
+                                            <span class="person_name ms-2">Madel</span>
+                                            <span class="sent_message p-2">I update the calendar and
+                                                re-reschedule your new
+                                                hearing Atty.
+                                                Mansalas.</span>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="row mb-3">
+                            <div>
+                                <div class="d-flex justify-content-end">
+                                    <div class="d-flex flex-column me-2 w-50">
+                                        <span class="reply_message p-2">I update the calendar and
+                                            re-reschedule your new
+                                            hearing Atty.
+                                            Mansalas.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="message" class="row border">
+                    <div class="col d-flex align-items-center">
+                        <i class="bi bi-plus-circle-fill pe-2 text-secondary"></i>
+                        <input type="text" name="" id="" class="rounded-pill border-light w-100">
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div id="see_more" class="col-3 border p-3 min-vh-100 d-flex flex-column d-none">
+
+                <div class="bg-secondary">
+                    <img src="/resources/Ellipse 12.png" alt="" width="50px" height="50px">
+
+                </div>
+
+                <div class="dropwdown bg-info">
+                    <h2>See More</h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="/javascript/home_chat.js"></script>
+</body>
+
+</html>
