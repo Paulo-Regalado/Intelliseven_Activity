@@ -2,10 +2,18 @@
     height: 100%vh;
     width: 100%vw;
 }
-.secondary_pic{
+.img_container{
     position: relative;
-    top: -60%;
-    left: 15%;
+}
+
+/* #pic1{
+    position: relative;
+} */
+
+.secondary_pic{
+    position: absolute;
+    top: 5%;
+    left: 40%;
     /* transform: translate(-100%, -100%); */
     z-index: 2;
     
@@ -23,6 +31,25 @@ p{
     text-decoration: none;
     background-color: #dfdede;
     border-radius: 3px;
+}
+.inbox_mess:hover .active {
+    display: none;
+}
+#more {
+    display: none;
+}
+
+#active_now{
+    font-size: 20px;
+    color: #0094FF;
+}
+
+.inbox_mess:hover #more {
+    display: block;
+}
+
+#seconds{
+    font-size: 12px;
 }
 
 #message{
@@ -81,7 +108,53 @@ p{
 .dropdown{
     height: 100%vh;
 }
-/* i{
+
+#see_more{
+    position: relative;
+}
+
+.group_photo{
+    position: absolute;
+    top: 4%;
+    left: 50%;
+}
+
+#customed_chat, #chat_members, #media, #privacy {
     font-size: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+#see_more{
    
-} */
+    overflow-y: auto;
+}
+
+#customed_chat::after, #chat_members::after, #media::after, #privacy::after {
+    content: "";
+    border-top: 0.3em solid transparent;
+    border-bottom: 0.3em solid transparent;
+    border-left: 0.3em solid;
+    display: inline-block;
+    margin-left: 13em; /* Adjust the margin as needed */
+    vertical-align: 0.15em; /* Adjust the vertical alignment as needed */
+    transition: transform 0.3s ease; /* Add smooth transition effect */
+}
+
+#customed_chat[aria-expanded="true"]::after,
+#chat_members[aria-expanded="true"]::after,
+#media[aria-expanded="true"]::after,
+#privacy[aria-expanded="true"]::after {
+    transform: rotate(180deg); /* Rotate the arrow when the dropdown is open */
+}
+
+#chat_members::after {
+    margin-left: 13.5em;
+}
+#media::after {
+    margin-left: 13em;
+}
+#privacy::after {
+    margin-left: 11.8em;
+}
+

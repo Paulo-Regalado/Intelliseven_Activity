@@ -14,39 +14,10 @@
 </head>
 
 <body>
-    <!-- <div class="wrapper d-flex">
-        <div class="sidebar bg-secondary d-flex flex-column" h-100>
-            <img src="/resources/IntelliSeven_Logo 1.png" alt="" width="62" height="41">
-            <div class="d-flex flex-column justify-content-between ps-2">
-
-                <img src="/resources/bxs_message.png" alt="" width="40" height="40">
-
-                <img src="/resources/material-symbols_group.png" alt="" width="40" height="40">
-                <img src="/resources/tabler_map-pin-filled.png" alt="" width="40" height="40">
-
-            </div>
-
-            <div class="">
-                <img src="/resources/Ellipse 7.png" alt="">
-            </div>
-        </div>
-
-        <div class="inbox bg-primary">
-
-
-
-        </div>
-
-        <div class="message">
-
-
-        </div>
-
-
-    </div> -->
 
     <div class="container-fluid">
         <div class="row">
+            <!-- Sidebar -->
             <div class="col-sm-auto border sticky-top d-flex">
                 <div class="d-flex flex-sm-column flex-row flex-nowrap align-items-center sticky-top">
                     <a href="/" class="d-block pt-2">
@@ -74,8 +45,9 @@
                     </div>
                 </div>
             </div>
+            <!-- Sidebar -->
 
-
+            <!-- Chat List -->
             <div id="chats" class="col-3 border p-3 d-flex flex-column">
                 <div class="d-flex justify-content-between w-100">
                     <h3>Chats</h3>
@@ -83,186 +55,121 @@
                 </div>
 
                 <div class="form-floating mb-2">
-                    <input class="form-control form-control rounded-pill" type="text" placeholder=".form-control-sm">
+                    <input class="form-control form-control-sm rounded-pill" type="text" id="floatingInput"
+                        placeholder=".form-control-sm">
                     <label for="floatingInput"><i class="bi bi-search me-1"></i>Search message</label>
                 </div>
 
+
                 <div class="inbox_content">
 
-
-                    <a href="" class="inbox_mess text-decoration-none text-dark">
-                        <div class="d-flex mt-2">
-                            <div class="">
+                    <a href="" class="text-decoration-none text-dark">
+                        <div class="inbox_mess d-flex mt-2">
+                            <div class="img_container pt-2">
                                 <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
                                 <img class="secondary_pic" src="/resources/Ellipse 15.png" alt="" width="40"
                                     height="40">
                             </div>
 
-                            <div class="">
+                            <div class="ps-4">
                                 <span class="name">SMJ Law Firm</span>
                                 <p>Madel: Already change your schedule atty.</p>
                             </div>
                             <div class="ms-2">
-                                <span class="name ps-3 text-primary"><i class="bi bi-dot fs-5"></i></span>
-                                <p class="ps-1">1m</p>
+
+                                <div class="active">
+                                    <div class="row">
+                                        <div class="col">
+                                            <i id="active_now" class="bi bi-dot ps-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <span id="seconds">1m</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="more" class="mt-3">
+                                    <button class="rounded-circle border-0"><i class="bi bi-three-dots"></i></button>
+                                </div>
                             </div>
                         </div>
                     </a>
 
-                    <a href="" class="inbox_mess text-decoration-none text-dark">
-                        <div class="d-flex">
-                            <div class="">
+                    <a href="" class="text-decoration-none text-dark">
+                        <div class="inbox_mess d-flex mt-2">
+                            <div class="img_container pt-2">
                                 <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
                                 <img class="secondary_pic" src="/resources/Ellipse 15.png" alt="" width="40"
                                     height="40">
                             </div>
 
-                            <div class="">
+                            <div class="ps-4">
                                 <span class="name">SMJ Law Firm</span>
                                 <p>Madel: Already change your schedule atty.</p>
                             </div>
                             <div class="ms-2">
-                                <span class="name ps-3 text-primary"><i class="bi bi-dot fs-5"></i></span>
-                                <p class="ps-1">1m</p>
+
+                                <div class="active">
+                                    <div class="row">
+                                        <div class="col">
+                                            <i id="active_now" class="bi bi-dot ps-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <span id="seconds">1m</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="more" class="mt-3">
+                                    <button class="rounded-circle border-0"><i class="bi bi-three-dots"></i></button>
+                                </div>
                             </div>
                         </div>
                     </a>
 
-                    <a href="" class="inbox_mess text-decoration-none text-dark">
-                        <div class="d-flex">
-                            <div class="">
+                    <a href="" class="text-decoration-none text-dark">
+                        <div class="inbox_mess d-flex mt-2">
+                            <div class="img_container pt-2">
                                 <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
                                 <img class="secondary_pic" src="/resources/Ellipse 15.png" alt="" width="40"
                                     height="40">
                             </div>
 
-                            <div class="">
+                            <div class="ps-4">
                                 <span class="name">SMJ Law Firm</span>
                                 <p>Madel: Already change your schedule atty.</p>
                             </div>
                             <div class="ms-2">
-                                <span class="name ps-3 text-primary"><i class="bi bi-dot fs-5"></i></span>
-                                <p class="ps-1">1m</p>
+
+                                <div class="active">
+                                    <div class="row">
+                                        <div class="col">
+                                            <i id="active_now" class="bi bi-dot ps-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <span id="seconds">1m</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="more" class="mt-3">
+                                    <button class="rounded-circle border-0"><i class="bi bi-three-dots"></i></button>
+                                </div>
                             </div>
                         </div>
                     </a>
-
-                    <a href="" class="inbox_mess text-decoration-none text-dark">
-                        <div class="d-flex">
-                            <div class="">
-                                <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
-                                <img class="secondary_pic" src="/resources/Ellipse 15.png" alt="" width="40"
-                                    height="40">
-                            </div>
-
-                            <div class="">
-                                <span class="name">SMJ Law Firm</span>
-                                <p>Madel: Already change your schedule atty.</p>
-                            </div>
-                            <div class="ms-2">
-                                <span class="name ps-3 text-primary"><i class="bi bi-dot fs-5"></i></span>
-                                <p class="ps-1">1m</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="" class="inbox_mess text-decoration-none text-dark">
-                        <div class="d-flex">
-                            <div class="">
-                                <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
-                                <img class="secondary_pic" src="/resources/Ellipse 15.png" alt="" width="40"
-                                    height="40">
-                            </div>
-
-                            <div class="">
-                                <span class="name">SMJ Law Firm</span>
-                                <p>Madel: Already change your schedule atty.</p>
-                            </div>
-                            <div class="ms-2">
-                                <span class="name ps-3 text-primary"><i class="bi bi-dot fs-5"></i></span>
-                                <p class="ps-1">1m</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="" class="inbox_mess text-decoration-none text-dark">
-                        <div class="d-flex">
-                            <div class="">
-                                <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
-                                <img class="secondary_pic" src="/resources/Ellipse 15.png" alt="" width="40"
-                                    height="40">
-                            </div>
-
-                            <div class="">
-                                <span class="name">SMJ Law Firm</span>
-                                <p>Madel: Already change your schedule atty.</p>
-                            </div>
-                            <div class="ms-2">
-                                <span class="name ps-3 text-primary"><i class="bi bi-dot fs-5"></i></span>
-                                <p class="ps-1">1m</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="" class="inbox_mess text-decoration-none text-dark">
-                        <div class="d-flex">
-                            <div class="">
-                                <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
-                                <img class="secondary_pic" src="/resources/Ellipse 15.png" alt="" width="40"
-                                    height="40">
-                            </div>
-
-                            <div class="">
-                                <span class="name">SMJ Law Firm</span>
-                                <p>Madel: Already change your schedule atty.</p>
-                            </div>
-                            <div class="ms-2">
-                                <span class="name ps-3 text-primary"><i class="bi bi-dot fs-5"></i></span>
-                                <p class="ps-1">1m</p>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="" class="inbox_mess text-decoration-none text-dark">
-                        <div class="d-flex">
-                            <div class="">
-                                <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
-                                <img class="secondary_pic" src="/resources/Ellipse 15.png" alt="" width="40"
-                                    height="40">
-                            </div>
-
-                            <div class="">
-                                <span class="name">SMJ Law Firm</span>
-                                <p>Madel: Already change your schedule atty.</p>
-                            </div>
-                            <div class="ms-2">
-                                <span class="name ps-3 text-primary"><i class="bi bi-dot fs-5"></i></span>
-                                <p class="ps-1">1m</p>
-                            </div>
-                        </div>
-                    </a>
-
-
 
                 </div>
-
-
-                <!-- 
-                <div class="d-flex">
-                    <img src="/resources/Ellipse 16.png" alt="" width="40" height="40">
-                    <span class="ms-4">
-                        <span class="name">Mansala Law Firm</span>
-                        <p>Atty. Robert: I can’t edit the description for.</p>
-                    </span>
-                    <span>
-                        <span class="name ps-3 text-primary"><i class="bi bi-dot"></i></span>
-                        <p class="ps-1">1m</p>
-                    </span>
-                </div> -->
-
-
             </div>
+            <!-- Chat List -->
 
+            <!-- Message -->
             <div class="col-sm px d-flex flex-column">
 
                 <div id="message" class="row border">
@@ -318,13 +225,9 @@
                                                 re-reschedule your new
                                                 hearing Atty.
                                                 Mansalas.</span>
-
                                         </div>
-
                                     </div>
                                 </div>
-
-
                             </div>
 
                             <div class="row mb-3">
@@ -337,13 +240,9 @@
                                         <div class="d-flex flex-column ms-2">
                                             <span class="person_name ms-2">Atty. Raphael</span>
                                             <span class="sent_message p-2">Noted. Thank you.</span>
-
                                         </div>
-
                                     </div>
                                 </div>
-
-
                             </div>
 
                             <div class="row mb-3">
@@ -361,11 +260,8 @@
                                                 Mansalas.</span>
 
                                         </div>
-
                                     </div>
                                 </div>
-
-
                             </div>
 
                         </div>
@@ -391,13 +287,9 @@
                                                 re-reschedule your new
                                                 hearing Atty.
                                                 Mansalas.</span>
-
                                         </div>
-
                                     </div>
                                 </div>
-
-
                             </div>
 
                             <div class="row mb-3">
@@ -406,20 +298,15 @@
                                         <div class="">
                                             <img src="/resources/Ellipse 7.png" alt="" width="39px" height="39px">
                                         </div>
-
                                         <div class="d-flex flex-column ms-2">
                                             <span class="person_name ms-2">Madel</span>
                                             <span class="sent_message p-2">I update the calendar and
                                                 re-reschedule your new
                                                 hearing Atty.
                                                 Mansalas.</span>
-
                                         </div>
-
                                     </div>
                                 </div>
-
-
                             </div>
 
                         </div>
@@ -451,25 +338,95 @@
 
 
             </div>
+            <!-- Message -->
 
-            <div id="see_more" class="col-3 border p-3 min-vh-100 d-flex flex-column d-none">
+            <!-- See More -->
+            <div id="see_more" class="col-3 border p-3 d-flex flex-column d-none">
 
-                <div class="bg-secondary">
-                    <img src="/resources/Ellipse 12.png" alt="" width="50px" height="50px">
+                <div class="p-1 mt-4 text-center">
+                    <img src="/resources/Ellipse 8.png" alt="" width="70px" height="70px">
+                    <img src="/resources/Ellipse 15.png" class="group_photo" alt="" width="70px" height="70px">
+                    <h5 class="mt-3">SMJ Law Firm</h5>
+                </div>
+
+                <div class="icons text-center mb-2">
+
+                    <button class="rounded-circle border-0"><i class="bi bi-bell-slash"></i></button>
+                    <button class="rounded-circle border-0"><i class="bi bi-search"></i></button>
 
                 </div>
 
-                <div class="dropwdown bg-info">
-                    <h2>See More.......</h2>
+                <div class="dropwdown">
+                    <button id="customed_chat" class="btn dropdown-toggle w-100" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Customize Chat
+                    </button>
+
+                    <div id="customed_chat_option" class="dropdown-menu-right w-100 d-none"
+                        aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#"><button class="rounded-circle border-0 me-2"><i
+                                    class="bi bi-pencil"></i></button>Change chat name</a>
+                        <a class="dropdown-item" href="#"><button class="rounded-circle border-0 me-2"><i
+                                    class="bi bi-image"></i></button>Change photo</a>
+                        <a class="dropdown-item" href="#"><button class="rounded-circle border-0 me-2"><i
+                                    class="bi bi-alphabet"></i></button>Edit nicknames</a>
+                        <a class="dropdown-item" href="#"><button class="rounded-circle border-0 me-2"><i
+                                    class="bi bi-search"></i></button>Search in conversations</a>
+
+                    </div>
+
+                    <button id="chat_members" class="btn dropdown-toggle w-100" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Chat Members
+                    </button>
+                    <div id="chat_members_option" class="dropdown-menu-right w-100 d-none"
+                        aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Item 1</a>
+                        <a class="dropdown-item" href="#">Item 2</a>
+                        <a class="dropdown-item" href="#">Item 3</a>
+                    </div>
+
+                    <button id="media" class="btn dropdown-toggle w-100" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Media and Files
+                    </button>
+                    <div id="media_option" class="dropdown-menu-right w-100 d-none"
+                        aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Item 1</a>
+                        <a class="dropdown-item" href="#">Item 2</a>
+                        <a class="dropdown-item" href="#">Item 3</a>
+                    </div>
+
+                    <button id="privacy" class="btn dropdown-toggle w-100" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Privacy & Support
+                    </button>
+                    <div id="privacy_option" class="dropdown-menu-right w-100 d-none"
+                        aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Item 1</a>
+                        <a class="dropdown-item" href="#">Item 2</a>
+                        <a class="dropdown-item" href="#">Item 3</a>
+                    </div>
+
+
+
                 </div>
 
             </div>
+            <!-- See More -->
+
         </div>
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
     <script src="/javascript/home_chat.js"></script>
