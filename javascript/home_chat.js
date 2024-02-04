@@ -33,4 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
     privacyBtn.addEventListener("click", function () {
         privacyDiv.classList.toggle("d-none");
     });
+
+
+    //a tag event listener
+
 });
