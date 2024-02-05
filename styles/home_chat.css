@@ -81,17 +81,24 @@ p{
     color: #959494;
 }
 
-.sent_message{
+.received_message{
     font-size: 15px;
     background-color: #D9D9D9;
     border-radius: 15px;
 }
 
-.reply_message{
+.sent_message{
     background-color: #49DA04;
     color: #FFFFFF;
     font-size: 15px;
     border-radius: 15px;
+}
+
+#sent_container{
+    display: inline-block;
+    max-width: 50%;
+    word-wrap: break-word;
+    
 }
 
 .inbox_content{
@@ -170,3 +177,9 @@ p{
     box-shadow: 0 0 150px 150px rgba(255, 192, 203, 0.3);
 }
 
+
+
+.sub_text{
+    font-size: 12px;
+    color: #959494;
+}

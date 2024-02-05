@@ -45,6 +45,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- Sidebar -->
 
             <!-- Chat List -->
@@ -64,6 +65,67 @@
                 <div class="inbox_content">
 
                     <div href="#" class="text-decoration-none text-dark">
+                        <!-- <div class="inbox_mess d-flex mt-2">
+                            <div class="img_container pt-2">
+                                <img src="../resources/Ellipse 8.png" alt="" width="40" height="40">
+                                <img class="secondary_pic" src="../resources/Ellipse 15.png" alt="" width="40"
+                                    height="40">
+                            </div>
+
+                            <div class="ps-4">
+                                <span class="name">SMJ Law Firm</span>
+                                <p>Madel: Already change your schedule atty.</p>
+                            </div>
+                            <div class="ms-2">
+
+                                <div class="active">
+                                    <div class="row">
+                                        <div class="col">
+                                            <i id="active_now" class="bi bi-dot ps-3"></i>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col ps-3">
+                                            <span id="seconds">1m</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="more" class="mt-3">
+                                    <button id="more_option" class="btn-sm rounded-circle border-0 bg-light"
+                                        type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <i class="bi bi-three-dots"></i>
+                                    </button>
+
+                                    <div id="more_menu_option" class="dropdown-menu"
+                                        aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#"><button
+                                                class="rounded-circle border-0 me-2"><i
+                                                    class="bi bi-check2-all"></i></button>Mark as read</a>
+                                        <a class="dropdown-item" href="#"><button
+                                                class="rounded-circle border-0 me-2"><i
+                                                    class="bi bi-bell-slash"></i></button>Mute as notifications</a>
+                                        <a class="dropdown-item" href="#"><button
+                                                class="rounded-circle border-0 me-2"><i
+                                                    class="bi bi-trash3"></i></button>Delete Chat</a>
+                                        <a class="dropdown-item" href="#"><button
+                                                class="rounded-circle border-0 me-2"><i
+                                                    class="bi bi-exclamation-octagon"></i></button>Report</a>
+                                        <a class="dropdown-item" href="#"><button
+                                                class="rounded-circle border-0 me-2"><i
+                                                    class="bi bi-box-arrow-right"></i></button>Leave group</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <div id="groupList"></div>
+                    </div>
+
+
+                    <!-- <div href="#" class="text-decoration-none text-dark">
                         <div class="inbox_mess d-flex mt-2">
                             <div class="img_container pt-2">
                                 <img src="../resources/Ellipse 8.png" alt="" width="40" height="40">
@@ -119,65 +181,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div href="#" class="text-decoration-none text-dark">
-                        <div class="inbox_mess d-flex mt-2">
-                            <div class="img_container pt-2">
-                                <img src="../resources/Ellipse 8.png" alt="" width="40" height="40">
-                                <img class="secondary_pic" src="../resources/Ellipse 15.png" alt="" width="40"
-                                    height="40">
-                            </div>
-
-                            <div class="ps-4">
-                                <span class="name">SMJ Law Firm</span>
-                                <p>Madel: Already change your schedule atty.</p>
-                            </div>
-                            <div class="ms-2">
-
-                                <div class="active">
-                                    <div class="row">
-                                        <div class="col">
-                                            <i id="active_now" class="bi bi-dot ps-3"></i>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col ps-3">
-                                            <span id="seconds">1m</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div id="more" class="mt-3">
-                                    <button id="more_option" class="btn-sm rounded-circle border-0 bg-light"
-                                        type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        <i class="bi bi-three-dots"></i>
-                                    </button>
-
-                                    <div id="more_menu_option" class="dropdown-menu"
-                                        aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#"><button
-                                                class="rounded-circle border-0 me-2"><i
-                                                    class="bi bi-check2-all"></i></button>Mark as read</a>
-                                        <a class="dropdown-item" href="#"><button
-                                                class="rounded-circle border-0 me-2"><i
-                                                    class="bi bi-bell-slash"></i></button>Mute as notifications</a>
-                                        <a class="dropdown-item" href="#"><button
-                                                class="rounded-circle border-0 me-2"><i
-                                                    class="bi bi-trash3"></i></button>Delete Chat</a>
-                                        <a class="dropdown-item" href="#"><button
-                                                class="rounded-circle border-0 me-2"><i
-                                                    class="bi bi-exclamation-octagon"></i></button>Report</a>
-                                        <a class="dropdown-item" href="#"><button
-                                                class="rounded-circle border-0 me-2"><i
-                                                    class="bi bi-box-arrow-right"></i></button>Leave group</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div> -->
 
 
 
@@ -197,7 +201,7 @@
 
                             </div>
                             <div>
-                                <span class="name">SMJ Law Firm</span>
+                                <span id="groupNamePlaceholder" class="name"></span>
                             </div>
 
                             <div class="ms-auto">
@@ -230,16 +234,13 @@
 
                                         <div class="d-flex flex-column ms-2">
                                             <span class="person_name ms-2">Madel</span>
-                                            <span class="sent_message p-2">I update the calendar and
-                                                re-reschedule your new
-                                                hearing Atty.
-                                                Mansalas.</span>
+                                            <span id="received_message" class="received_message p-2"></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="row mb-3">
+                            <!-- <div class="row mb-3">
                                 <div>
                                     <div class="d-flex">
                                         <div class="">
@@ -271,17 +272,17 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                         </div>
 
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col text-center">
                                 <span id="date">Wed, Dec 20 at 11:31 AM</span>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="w-50">
+                        <!-- <div class="w-50">
 
                             <div class="row mb-3">
                                 <div>
@@ -318,17 +319,14 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div> -->
 
 
                         <div class="row mb-3">
                             <div>
                                 <div class="d-flex justify-content-end">
-                                    <div class="d-flex flex-column me-2 w-50">
-                                        <span class="reply_message p-2">I update the calendar and
-                                            re-reschedule your new
-                                            hearing Atty.
-                                            Mansalas.</span>
+                                    <div id="sent_container" class="d-flex flex-column me-2">
+                                        <span id="sent_message" class="sent_message p-2"></span>
                                     </div>
                                 </div>
                             </div>
@@ -356,12 +354,12 @@
                 <div class="p-1 mt-4 text-center">
                     <img src="../resources/Ellipse 8.png" alt="" width="70px" height="70px">
                     <img src="../resources/Ellipse 15.png" class="group_photo" alt="" width="70px" height="70px">
-                    <h5 class="mt-3">SMJ Law Firm</h5>
+                    <h5 id="seeMorePlaceHolder" class="mt-3"></h5>
                 </div>
 
                 <div class="icons text-center mb-2">
 
-                    <button class="rounded-circle border-0"><i class="bi bi-bell-slash"></i></button>
+                    <button class="rounded-circle border-0 me-2"><i class="bi bi-bell-slash"></i></button>
                     <button class="rounded-circle border-0"><i class="bi bi-search"></i></button>
 
                 </div>
@@ -391,12 +389,105 @@
                     </button>
                     <div id="chat_members_option" class="dropdown-menu-right w-100 d-none"
                         aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#"><img src="../resources/Ellipse 13.png"
-                                class="rounded-circle me-2" alt="">Joshua Martins</a>
+
+                        <a class="dropdown-item">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="../resources/Ellipse 13.png" class="rounded-circle me-2" alt="">
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <span class="name">Joshua Martins</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <span class="sub_text">Associate Atty. Martins</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2 pt-2">
+                                    <button class="btn-sm rounded-circle border-0 bg-light" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <i class="bi bi-three-dots"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </a>
+
+                        <a class="dropdown-item">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="../resources/Ellipse 17.png" class="rounded-circle me-2" alt="">
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <span class="name">Marvin Malsada</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <span class="sub_text">Associate Atty.Marvin</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2 pt-2">
+                                    <button class="btn-sm rounded-circle border-0 bg-light" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <i class="bi bi-three-dots"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </a>
+
+
+                        <a class="dropdown-item">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="../resources/Ellipse 16.png" class="rounded-circle me-2" alt="">
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <span class="name">Raphael Sy</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <span class="sub_text">Legal Atty. Raphael</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2 pt-2">
+                                    <button class="btn-sm rounded-circle border-0 bg-light" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <i class="bi bi-three-dots"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </a>
+
+
+                        <!-- <a class="dropdown-item" href="#"></a>
                         <a class="dropdown-item" href="#"><img src="../resources/Ellipse 17.png"
-                                class="rounded-circle me-2" alt="">Marvin Malsada</a>
+                                class="rounded-circle me-2" alt="">Marvin Malsada <span
+                                class="sub_title text-secondary">Associate
+                                Atty.
+                                Martins</span></a>
                         <a class="dropdown-item" href="#"><img src="../resources/Ellipse 16.png"
-                                class="rounded-circle me-2" alt="">Raphael Sy</a>
+                                class="rounded-circle me-2" alt="">Raphael Sy <span
+                                class="sub_title text-secondary">Associate
+                                Atty.
+                                Martins</span></a> -->
+
                     </div>
 
                     <button id="media" class="btn dropdown-toggle w-100" type="button" id="dropdownMenuButton"

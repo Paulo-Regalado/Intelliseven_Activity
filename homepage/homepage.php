@@ -55,38 +55,6 @@
             <div id="grad1"></div>
         </div>
 
-        <!-- <div class="lPanel flex-column d-flex w-30 mt-5 ps-5">
-
-            <div class="text_container fw-bolder pt-4">
-                <h1>LawChat<br>on Your <br>Pocket</h1>
-            </div>
-            <div class="d-flex flex-column w-75 mt-3">
-                <span class="text-secondary">It makes easy to communicate and ask for help.</span>
-
-                <div class="d-flex flex-column justify-content-center">
-                    <button type="button" class="btn rounded-pill text-light mt-3"
-                        style="background-color:#FF0000">Continue
-                        as Admin</button>
-                    <a href="" class="text-center text-decoration-none mt-1">Switch Account</a>
-                </div>
-
-                <div class="img_container d-flex justify-content-between mt-2">
-                    <img src="/resources/Appstore.png" alt="" class="me-2" width="150" height="55">
-                    <img src="/resources/Gplay.png" alt="" width="150" height="55">
-                </div>
-            </div>
-
-        </div>
-
-        <div class="RPanel justify-content-center align-items-center">
-            <div class="img_container">
-                <img src="/resources/Maps.png" alt="" class=" mt-3" width="750">
-
-            </div>
-
-        </div>
-        <div id="grad1"></div> -->
-
     </div>
 
 
