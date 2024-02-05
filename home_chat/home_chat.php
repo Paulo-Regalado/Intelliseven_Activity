@@ -226,7 +226,9 @@
                         <div class="w-50">
 
                             <div class="row mb-3">
-                                <div>
+                                <div id="messageContainer"></div>
+
+                                <!-- <div>
                                     <div class="d-flex">
                                         <div class="">
                                             <img src="../resources/Ellipse 12.png" alt="" width="39px" height="39px">
@@ -237,7 +239,7 @@
                                             <span id="received_message" class="received_message p-2"></span>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
 
                             <!-- <div class="row mb-3">

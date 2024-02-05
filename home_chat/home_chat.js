@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-
     // Function to fetch group names from the database
     function fetchGroupNames() {
         fetch('../home_chat/getGroupName.php')
@@ -47,12 +46,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     // Set the first group name as the default
                     const defaultGroupName = data[0].group_name;
                     updateGroupName(defaultGroupName);
+                    fetchGroupMessages(data[0].group_id);
                 }
                 // Loop through the data and update the HTML elements
                 data.forEach(group => {
                     const groupName = group.group_name;
-                    const receivedMessage = group.received_message;
-                    const sentMessage = group.sent_message;
 
 
                     // Create a new div element
@@ -126,9 +124,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 inboxMessElements.forEach((element, index) => {
                     element.addEventListener('click', () => {
                         updateGroupName(data[index].group_name);
-                        updateReceivedMessages(data[index].received_message);
-                        updateSentMessages(data[index].sent_message);
-
+                        updateGroupName(data[index].group_name);
+                        fetchGroupMessages(data[index].group_id);
                     });
                 });
 
@@ -144,13 +141,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    function updateReceivedMessages(receivedMessage) {
-        document.getElementById('received_message').textContent = receivedMessage;
+
+    // Function to fetch group messages from the database based on group_id
+    function fetchGroupMessages(groupchatID) {
+        let formData = new FormData();
+        formData.append('group_id', groupchatID);
+
+        fetch('../home_chat/getGroupMessages.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(messages => {
+                console.log('Group Messages:', messages);
+
+                // Clear previous messages in the container
+                const messageContainer = document.getElementById('messageContainer');
+                messageContainer.innerHTML = '';
+
+                // Loop through the messages and create HTML elements for each
+                messages.forEach(message => {
+                    const messageDiv = createMessageElement(message);
+                    messageContainer.appendChild(messageDiv);
+                });
+            })
+            .catch(error => console.error('Error fetching group messages:', error));
     }
 
-    function updateSentMessages(sentMessage) {
-        document.getElementById('sent_message').textContent = sentMessage;
+
+    // Function to create a message element based on the provided message object
+    function createMessageElement(message) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('row', 'mb-3');
+
+        messageDiv.innerHTML = `
+        <div>
+            <div class="d-flex">
+                <div>
+                    <img src="../resources/Ellipse 12.png" alt="" width="39px" height="39px">
+                </div>
+                <div class="d-flex flex-column ms-2">
+                    <span class="person_name ms-2">Madel</span>
+                    <span id="received_message" class="received_message p-2">${message.message}</span>
+                </div>
+            </div>
+        </div>
+    `;
+
+        return messageDiv;
     }
+
+    // function updateReceivedMessages(receivedMessage) {
+    //     document.getElementById('received_message').textContent = receivedMessage;
+    // }
+
+    // function updateSentMessages(sentMessage) {
+    //     document.getElementById('sent_message').textContent = sentMessage;
+    // }
 
 
     // Call the fetchGroupNames function when the page loads
