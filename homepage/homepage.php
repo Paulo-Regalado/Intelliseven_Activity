@@ -7,7 +7,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <title>Home</title>
 </head>
 
@@ -15,7 +15,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand ps-3" href="#">
-            <img src="./resources/IntelliSeven_Logo 1.png" alt="" width="87" height="57"
+            <img src="../resources/IntelliSeven_Logo 1.png" alt="" width="87" height="57"
                 class="d-inline-block align-text-top">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -31,82 +31,6 @@
         </div>
     </nav>
 
-    <!-- <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-between">
-        <div class="ps-3">
-            <a class="navbar-brand" href="#">
-                <img src="./resources/IntelliSeven_Logo 1.png" alt="" width="87" height="57"
-                    class="d-inline-block align-text-top">
-            </a>
-
-        </div>
-
-        <div class="pe-4">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul id="navItem" class="navbar-nav ml-auto fw-bold">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Desktop App</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Privacy & Safety</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- <nav class="navbar navbar-expand-md navbar-light border d-flex justify-content-between">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="./resources/IntelliSeven_Logo 1.png" alt="" width="87" height="57"
-                    class="d-inline-block align-text-top">
-            </a>
-        </div>
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
-                <ul id="navItem" class="navbar-nav fw-bold">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Desktop App</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark">Privacy & Safety</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav> -->
-
-    <!-- <nav class="bg-secondary d-flex">
-        <div>
-            <a class="navbar-brand" href="#">
-                <img src="./resources/IntelliSeven_Logo 1.png" alt="" width="87" height="57"
-                    class="d-inline-block align-text-top">
-            </a>
-        </div>
-
-
-        <ul id="navItem" class="navbar-nav fw-bold">
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#">Desktop App</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark">Privacy & Safety</a>
-            </li>
-        </ul> 
-    </nav> -->
 
     <div id="wrapper" class="container-fluid">
         <div class="row">
@@ -121,12 +45,12 @@
                 <a href="" class="text-center text-decoration-none mt-1">Switch Account</a>
 
                 <div class="img_container d-flex justify-content-center mt-4">
-                    <img src="/resources/Appstore.png" alt="" class="me-2" width="150" height="55">
-                    <img src="/resources/Gplay.png" alt="" width="150" height="55">
+                    <img src="../resources/Appstore.png" alt="" class="me-2" width="150" height="55">
+                    <img src="../resources/Gplay.png" alt="" width="150" height="55">
                 </div>
             </div>
             <div class="col-12 col-lg-8 text-center ps-5 pt-4">
-                <img src="./resources/Maps.png" alt="" class="img-fluid">
+                <img src="../resources/Maps.png" alt="" class="img-fluid">
             </div>
             <div id="grad1"></div>
         </div>

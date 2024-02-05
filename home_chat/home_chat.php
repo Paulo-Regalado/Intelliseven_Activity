@@ -9,7 +9,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="/styles/home_chat.css">
+    <link rel="stylesheet" href="../styles/home_chat.css">
     <title>Home Chat</title>
 </head>
 
@@ -21,27 +21,27 @@
             <div class="col-sm-auto border sticky-top d-flex">
                 <div class="d-flex flex-sm-column flex-row flex-nowrap align-items-center sticky-top">
                     <a href="/" class="d-block pt-2">
-                        <img src="/resources/IntelliSeven_Logo 1.png" alt="" width="62" height="41">
+                        <img src="../resources/IntelliSeven_Logo 1.png" alt="" width="62" height="41">
                     </a>
                     <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto">
                         <li class="nav-item">
                             <a href="#" class="nav-link py-3 px-2">
-                                <img src="/resources/bxs_message.png" alt="" width="40" height="40">
+                                <img src="../resources/bxs_message.png" alt="" width="40" height="40">
                             </a>
                         </li>
                         <li>
                             <a href="#" class="nav-link py-3 px-2">
-                                <img src="/resources/material-symbols_group.png" alt="" width="40" height="40">
+                                <img src="../resources/material-symbols_group.png" alt="" width="40" height="40">
                             </a>
                         </li>
                         <li>
                             <a href="#" class="nav-link py-3 px-2">
-                                <img src="/resources/tabler_map-pin-filled.png" alt="" width="40" height="40">
+                                <img src="../resources/tabler_map-pin-filled.png" alt="" width="40" height="40">
                             </a>
                         </li>
                     </ul>
                     <div class="profile mt-auto mb-3 d-flex align-items-end">
-                        <a href=""><img src="/resources/Ellipse 7.png" alt=""></a>
+                        <a href=""><img src="../resources/Ellipse 7.png" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
             <div id="chats" class="col-3 border p-3 d-flex flex-column">
                 <div class="d-flex justify-content-between w-100">
                     <h3>Chats</h3>
-                    <a href="" class=""><img src="/resources/add.png" alt="" width="30" height="30"></a>
+                    <a href="" class=""><img src="../resources/add.png" alt="" width="30" height="30"></a>
                 </div>
 
                 <div class="form-floating mb-2">
@@ -66,8 +66,8 @@
                     <div href="#" class="text-decoration-none text-dark">
                         <div class="inbox_mess d-flex mt-2">
                             <div class="img_container pt-2">
-                                <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
-                                <img class="secondary_pic" src="/resources/Ellipse 15.png" alt="" width="40"
+                                <img src="../resources/Ellipse 8.png" alt="" width="40" height="40">
+                                <img class="secondary_pic" src="../resources/Ellipse 15.png" alt="" width="40"
                                     height="40">
                             </div>
 
@@ -84,7 +84,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col">
+                                        <div class="col ps-3">
                                             <span id="seconds">1m</span>
                                         </div>
                                     </div>
@@ -124,8 +124,8 @@
                     <div href="#" class="text-decoration-none text-dark">
                         <div class="inbox_mess d-flex mt-2">
                             <div class="img_container pt-2">
-                                <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
-                                <img class="secondary_pic" src="/resources/Ellipse 15.png" alt="" width="40"
+                                <img src="../resources/Ellipse 8.png" alt="" width="40" height="40">
+                                <img class="secondary_pic" src="../resources/Ellipse 15.png" alt="" width="40"
                                     height="40">
                             </div>
 
@@ -142,7 +142,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col">
+                                        <div class="col ps-3">
                                             <span id="seconds">1m</span>
                                         </div>
                                     </div>
@@ -189,11 +189,11 @@
             <div class="col-sm px d-flex flex-column">
 
                 <div id="message" class="row border">
-                    <div class="col d-flex pt-3">
+                    <div class="col d-flex pt-1">
                         <div class="d-flex align-items-center w-100">
                             <div class="img_wrapper d-flex">
-                                <img src="/resources/Ellipse 8.png" alt="" width="40" height="40">
-                                <img id="header_img" src="/resources/Ellipse 8.png" alt="" width="40" height="40">
+                                <img src="../resources/Ellipse 8.png" alt="" width="40" height="40">
+                                <img id="header_img" src="../resources/Ellipse 8.png" alt="" width="40" height="40">
 
                             </div>
                             <div>
@@ -225,7 +225,7 @@
                                 <div>
                                     <div class="d-flex">
                                         <div class="">
-                                            <img src="/resources/Ellipse 12.png" alt="" width="39px" height="39px">
+                                            <img src="../resources/Ellipse 12.png" alt="" width="39px" height="39px">
                                         </div>
 
                                         <div class="d-flex flex-column ms-2">
@@ -243,7 +243,7 @@
                                 <div>
                                     <div class="d-flex">
                                         <div class="">
-                                            <img src="/resources/Ellipse 13.png" alt="" width="39px" height="39px">
+                                            <img src="../resources/Ellipse 13.png" alt="" width="39px" height="39px">
                                         </div>
 
                                         <div class="d-flex flex-column ms-2">
@@ -258,7 +258,7 @@
                                 <div>
                                     <div class="d-flex">
                                         <div class="">
-                                            <img src="/resources/Ellipse 7.png" alt="" width="39px" height="39px">
+                                            <img src="../resources/Ellipse 7.png" alt="" width="39px" height="39px">
                                         </div>
 
                                         <div class="d-flex flex-column ms-2">
@@ -287,7 +287,7 @@
                                 <div>
                                     <div class="d-flex">
                                         <div class="">
-                                            <img src="/resources/Ellipse 7.png" alt="" width="39px" height="39px">
+                                            <img src="../resources/Ellipse 7.png" alt="" width="39px" height="39px">
                                         </div>
 
                                         <div class="d-flex flex-column ms-2">
@@ -305,7 +305,7 @@
                                 <div>
                                     <div class="d-flex">
                                         <div class="">
-                                            <img src="/resources/Ellipse 7.png" alt="" width="39px" height="39px">
+                                            <img src="../resources/Ellipse 7.png" alt="" width="39px" height="39px">
                                         </div>
                                         <div class="d-flex flex-column ms-2">
                                             <span class="person_name ms-2">Madel</span>
@@ -340,7 +340,8 @@
                 <div id="message" class="row border">
                     <div class="col d-flex align-items-center">
                         <i class="bi bi-plus-circle-fill pe-2 text-secondary"></i>
-                        <input type="text" name="" id="" class="rounded-pill border-light w-100">
+                        <input type="text" name="" id="" class="rounded-pill border-1 border-light w-100">
+                        <i class="bi bi-send px-2 text-secondary"></i>
                     </div>
                 </div>
 
@@ -350,11 +351,11 @@
             <!-- Message -->
 
             <!-- See More -->
-            <div id="see_more" class="col-3 border p-3 d-flex flex-column d-none">
+            <div id="see_more" class="col-3 border p-3 d-flex flex-column">
 
                 <div class="p-1 mt-4 text-center">
-                    <img src="/resources/Ellipse 8.png" alt="" width="70px" height="70px">
-                    <img src="/resources/Ellipse 15.png" class="group_photo" alt="" width="70px" height="70px">
+                    <img src="../resources/Ellipse 8.png" alt="" width="70px" height="70px">
+                    <img src="../resources/Ellipse 15.png" class="group_photo" alt="" width="70px" height="70px">
                     <h5 class="mt-3">SMJ Law Firm</h5>
                 </div>
 
@@ -390,11 +391,11 @@
                     </button>
                     <div id="chat_members_option" class="dropdown-menu-right w-100 d-none"
                         aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#"><img src="/resources/Ellipse 13.png"
+                        <a class="dropdown-item" href="#"><img src="../resources/Ellipse 13.png"
                                 class="rounded-circle me-2" alt="">Joshua Martins</a>
-                        <a class="dropdown-item" href="#"><img src="/resources/Ellipse 17.png"
+                        <a class="dropdown-item" href="#"><img src="../resources/Ellipse 17.png"
                                 class="rounded-circle me-2" alt="">Marvin Malsada</a>
-                        <a class="dropdown-item" href="#"><img src="/resources/Ellipse 16.png"
+                        <a class="dropdown-item" href="#"><img src="../resources/Ellipse 16.png"
                                 class="rounded-circle me-2" alt="">Raphael Sy</a>
                     </div>
 
@@ -416,9 +417,12 @@
                     </button>
                     <div id="privacy_option" class="dropdown-menu-right w-100 d-none"
                         aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Item 1</a>
-                        <a class="dropdown-item" href="#">Item 2</a>
-                        <a class="dropdown-item" href="#">Item 3</a>
+                        <a class="dropdown-item" href="#"><button class="rounded-circle border-0 me-2"><i
+                                    class="bi bi-bell"></i></button>Unmute notifications</a>
+                        <a class="dropdown-item" href="#"><button class="rounded-circle border-0 me-2"><i
+                                    class="bi bi-exclamation-triangle"></i></button>Report</a>
+                        <a class="dropdown-item" href="#"><button class="rounded-circle border-0 me-2"><i
+                                    class="bi bi-box-arrow-right"></i></button>Leave group</a>
                     </div>
 
 
@@ -430,6 +434,7 @@
 
         </div>
     </div>
+    <div id="grad1"></div>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -442,7 +447,7 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
-    <script src="/javascript/home_chat.js"></script>
+    <script src="../home_chat/home_chat.js"></script>
 </body>
 
 </html>
