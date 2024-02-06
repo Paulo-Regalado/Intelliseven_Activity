@@ -17,8 +17,10 @@ LEFT JOIN (
     FROM messages
     GROUP BY group_chat_id
 ) latest_msg ON gc.group_chat_id = latest_msg.group_chat_id
-LEFT JOIN messages m ON latest_msg.group_chat_id = m.group_chat_id AND latest_msg.latest_timestamp = m.time;
+LEFT JOIN messages m ON latest_msg.group_chat_id = m.group_chat_id AND latest_msg.latest_timestamp = m.time
+ORDER BY latest_msg.latest_timestamp DESC;
 ";
+
 $result = $conn->prepare($sql);
 $result->execute();
 $result = $result->get_result();

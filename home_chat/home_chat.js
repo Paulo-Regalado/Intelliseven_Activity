@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
 
                 console.log('Group Names:', data);
+                document.getElementById('groupList').innerHTML = '';
 
                 // Check if there are any group names
                 if (data.length > 0) {
@@ -55,6 +56,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 data.forEach(group => {
                     const groupName = group.group_name;
                     const latest_msg = group.message;
+
+                    const trimmed_msg = latest_msg.length > 35 ? latest_msg.substring(0, 35) + "..." : latest_msg;
+
 
 
                     // Create a new div element
@@ -70,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             </div>
                             <div class="ps-4">
                                 <span class="name">${groupName}</span>
-                                <p class="nickname">James: Already change your schedule atty.</p>
+                                <p class="nickname">Paulo: ${trimmed_msg}</p>
                             </div>
                             <div class="ms-2">
 
@@ -216,6 +220,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         return messageDiv;
     }
+
+
 
     window.sendMessage = function (groupChatID) {
 
