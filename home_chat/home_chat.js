@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     // Set the first group name as the default
                     const defaultGroupName = data[0].group_name;
                     updateGroupName(defaultGroupName);
-                    fetchGroupMessages(data[0].group_id);
+                    fetchGroupMessages(data[0].group_chat_id);
                 }
                 // Loop through the data and update the HTML elements
                 data.forEach(group => {
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             </div>
                             <div class="ps-4">
                                 <span class="name">${groupName}</span>
-                                <p>Madel: Already change your schedule atty.</p>
+                                <p>James: Already change your schedule atty.</p>
                             </div>
                             <div class="ms-2">
 
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     element.addEventListener('click', () => {
                         updateGroupName(data[index].group_name);
                         updateGroupName(data[index].group_name);
-                        fetchGroupMessages(data[index].group_id);
+                        fetchGroupMessages(data[index].group_chat_id);
                     });
                 });
 
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to fetch group messages from the database based on group_id
     function fetchGroupMessages(groupchatID) {
         let formData = new FormData();
-        formData.append('group_id', groupchatID);
+        formData.append('group_chat_id', groupchatID);
 
         fetch('../home_chat/getGroupMessages.php', {
             method: 'POST',
@@ -155,49 +155,128 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(messages => {
                 console.log('Group Messages:', messages);
 
+                // Sort messages based on timestamp
+                const sortedMessages = messages.sort((a, b) => new Date(a.time) - new Date(b.time));
+
                 // Clear previous messages in the container
+                // const messageContainer = document.getElementById('receivedMessageContainer');
+                // const sentMessageContainer = document.getElementById('sentMessageContainer');
+                // messageContainer.innerHTML = '';
+                // sentMessageContainer.innerHTML = '';
+
+                // Sort messages based on timestamp
+                // const sortedMessages = messages.sort((a, b) => new Date(a.time) - new Date(b.time));
+
+                // Create message elements and append them dynamically
                 const messageContainer = document.getElementById('messageContainer');
                 messageContainer.innerHTML = '';
-
-                // Loop through the messages and create HTML elements for each
-                messages.forEach(message => {
-                    const messageDiv = createMessageElement(message);
-                    messageContainer.appendChild(messageDiv);
+                sortedMessages.forEach((message) => {
+                    const messageElement = createMessageElement(message.message, message.nickname, message.group_member_id);
+                    messageContainer.appendChild(messageElement);
                 });
+
+
+                // Loop through the sorted messages and create HTML elements for each
+                // sortedMessages.forEach(message => {
+                //     const messageDiv = createMessageElement(message.message, message.nickname, message.group_member_id);
+
+                //     if (message.group_member_id === 1) {
+                //         sentMessageContainer.appendChild(messageDiv);
+                //     } else {
+                //         messageContainer.appendChild(messageDiv);
+                //     }
+                // });
             })
             .catch(error => console.error('Error fetching group messages:', error));
     }
 
 
+    // // Function to create a message element based on the provided message object
+    // function createMessageElement(message, nickname, group_member_id) {
+    //     const messageDiv = document.createElement('div');
+    //     messageDiv.classList.add('row', 'mb-3');
+
+    //     if (group_member_id === 1) {
+
+    //         messageDiv.innerHTML = `
+    //         <div>
+    //         <div class="d-flex justify-content-end">
+    //             <div id="sent_container" class="d-flex flex-column me-2">
+    //                 <span id="sent_message" class="sent_message p-2">${message}</span>
+    //             </div>
+    //         </div>
+    //     </div>
+    //     `;
+    //     }
+    //     else {
+
+    //         messageDiv.innerHTML = `
+    //         <div>
+    //             <div class="d-flex">
+    //                 <div>
+    //                     <img src="../resources/Ellipse 12.png" alt="" width="39px" height="39px">
+    //                 </div>
+    //                 <div class="d-flex flex-column ms-2">
+    //                     <span class="person_name ms-2">${nickname}</span>
+    //                     <span id="received_message" class="received_message p-2">${message}</span>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     `;
+
+    //     }
+
+
+    //     return messageDiv;
+    // }
+
     // Function to create a message element based on the provided message object
-    function createMessageElement(message) {
+    function createMessageElement(message, nickname, group_member_id) {
         const messageDiv = document.createElement('div');
         messageDiv.classList.add('row', 'mb-3');
 
-        messageDiv.innerHTML = `
-        <div>
+        if (group_member_id === 1) {
+            messageDiv.innerHTML = `
+            <div class="d-flex justify-content-end">
+                <div id="sent_container" class="d-flex flex-column me-2">
+                    <span id="sent_message" class="sent_message p-2">${message}</span>
+                </div>
+            </div>
+        `;
+        } else {
+            messageDiv.innerHTML = `
             <div class="d-flex">
                 <div>
                     <img src="../resources/Ellipse 12.png" alt="" width="39px" height="39px">
                 </div>
-                <div class="d-flex flex-column ms-2">
-                    <span class="person_name ms-2">Madel</span>
-                    <span id="received_message" class="received_message p-2">${message.message}</span>
+                <div id="received_container" class="d-flex flex-column ms-2">
+                    <span class="person_name ms-2">${nickname}</span>
+                    <span id="received_message" class="received_message p-2">${message}</span>
                 </div>
             </div>
-        </div>
-    `;
+        `;
+        }
 
         return messageDiv;
     }
 
-    // function updateReceivedMessages(receivedMessage) {
-    //     document.getElementById('received_message').textContent = receivedMessage;
-    // }
+    // // Example usage:
+    // const messages = [
+    //     { message_id: 1, message: 'Hello everyone', group_member_id: 1, time: '2024-02-05 09:09:09', nickname: 'Pau' },
+    //     { message_id: 2, message: 'Hi', group_member_id: 2, time: '2024-02-05 10:10:09', nickname: 'Angel' },
+    //     { message_id: 5, message: 'Any Updates?', group_member_id: 2, time: '2024-02-06 11:05:09', nickname: 'Angel' },
+    //     { message_id: 6, message: "I'll send today", group_member_id: 1, time: '2024-02-06 11:10:09', nickname: 'Pau' }
+    // ];
 
-    // function updateSentMessages(sentMessage) {
-    //     document.getElementById('sent_message').textContent = sentMessage;
-    // }
+    // // Sort messages based on timestamp
+    // const sortedMessages = messages.sort((a, b) => new Date(a.time) - new Date(b.time));
+
+    // // Create message elements and append them dynamically
+    // const messageContainer = document.getElementById('messageContainer');
+    // sortedMessages.forEach((message) => {
+    //     const messageElement = createMessageElement(message.message, message.nickname, message.group_member_id, message.time);
+    //     messageContainer.appendChild(messageElement);
+    // });
 
 
     // Call the fetchGroupNames function when the page loads

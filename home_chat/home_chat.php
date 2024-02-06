@@ -214,6 +214,34 @@
                     </div>
                 </div>
 
+                <!-- Message Content -->
+                <!-- <div id="content" class="row p-2">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col text-center">
+                                <span id="date">Sun, Aug 20 at 5:45 PM</span>
+                            </div>
+                        </div>
+
+
+                        <div class="w-50">
+
+                            <div class="row mb-3">
+                                <div id="receivedMessageContainer"></div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="row mb-3">
+                            <div id="sentMessageContainer"></div>
+                        </div>
+                    </div>
+
+                </div> -->
+
+
                 <div id="content" class="row p-2">
                     <div class="col">
                         <div class="row">
@@ -222,120 +250,11 @@
                             </div>
                         </div>
 
-                        <!-- Container with fixed width -->
-                        <div class="w-50">
-
-                            <div class="row mb-3">
-                                <div id="messageContainer"></div>
-
-                                <!-- <div>
-                                    <div class="d-flex">
-                                        <div class="">
-                                            <img src="../resources/Ellipse 12.png" alt="" width="39px" height="39px">
-                                        </div>
-
-                                        <div class="d-flex flex-column ms-2">
-                                            <span class="person_name ms-2">Madel</span>
-                                            <span id="received_message" class="received_message p-2"></span>
-                                        </div>
-                                    </div>
-                                </div> -->
-                            </div>
-
-                            <!-- <div class="row mb-3">
-                                <div>
-                                    <div class="d-flex">
-                                        <div class="">
-                                            <img src="../resources/Ellipse 13.png" alt="" width="39px" height="39px">
-                                        </div>
-
-                                        <div class="d-flex flex-column ms-2">
-                                            <span class="person_name ms-2">Atty. Raphael</span>
-                                            <span class="sent_message p-2">Noted. Thank you.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <div>
-                                    <div class="d-flex">
-                                        <div class="">
-                                            <img src="../resources/Ellipse 7.png" alt="" width="39px" height="39px">
-                                        </div>
-
-                                        <div class="d-flex flex-column ms-2">
-                                            <span class="person_name ms-2">Madel</span>
-                                            <span class="sent_message p-2">I update the calendar and
-                                                re-reschedule your new
-                                                hearing Atty.
-                                                Mansalas.</span>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-
-                        </div>
-
-                        <!-- <div class="row">
-                            <div class="col text-center">
-                                <span id="date">Wed, Dec 20 at 11:31 AM</span>
-                            </div>
-                        </div> -->
-
-                        <!-- <div class="w-50">
-
-                            <div class="row mb-3">
-                                <div>
-                                    <div class="d-flex">
-                                        <div class="">
-                                            <img src="../resources/Ellipse 7.png" alt="" width="39px" height="39px">
-                                        </div>
-
-                                        <div class="d-flex flex-column ms-2">
-                                            <span class="person_name ms-2">Madel</span>
-                                            <span class="sent_message p-2">I update the calendar and
-                                                re-reschedule your new
-                                                hearing Atty.
-                                                Mansalas.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <div>
-                                    <div class="d-flex">
-                                        <div class="">
-                                            <img src="../resources/Ellipse 7.png" alt="" width="39px" height="39px">
-                                        </div>
-                                        <div class="d-flex flex-column ms-2">
-                                            <span class="person_name ms-2">Madel</span>
-                                            <span class="sent_message p-2">I update the calendar and
-                                                re-reschedule your new
-                                                hearing Atty.
-                                                Mansalas.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div> -->
-
-
-                        <div class="row mb-3">
-                            <div>
-                                <div class="d-flex justify-content-end">
-                                    <div id="sent_container" class="d-flex flex-column me-2">
-                                        <span id="sent_message" class="sent_message p-2"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Container for both received and sent messages -->
+                        <div id="messageContainer" class="w-100 mb-3"></div>
                     </div>
-
                 </div>
+                <!-- Message Content -->
 
                 <div id="message" class="row border">
                     <div class="col d-flex align-items-center">

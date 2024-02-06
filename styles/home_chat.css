@@ -27,6 +27,7 @@ p{
     text-decoration: none;
     background-color: #dfdede;
     border-radius: 3px;
+    cursor: pointer;
 }
 .inbox_mess:hover .active {
     display: none;
@@ -95,6 +96,13 @@ p{
 }
 
 #sent_container{
+    display: inline-block;
+    max-width: 50%;
+    word-wrap: break-word;
+    
+}
+
+#received_container{
     display: inline-block;
     max-width: 50%;
     word-wrap: break-word;

@@ -10,7 +10,7 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "SELECT group_id, group_name FROM group_chat";
+$sql = "SELECT group_chat_id, group_name FROM group_chat";
 $result = $conn->prepare($sql);
 $result->execute();
 $result = $result->get_result();

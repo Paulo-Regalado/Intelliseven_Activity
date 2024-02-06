@@ -4,17 +4,19 @@ include_once '../php/config.php';
 
 $conn = OpenCon();
 
-
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if (isset($_POST['group_id'])) {
+if (isset($_POST['group_chat_id'])) {
     // Sanitize and get the group_id from the POST request
-    $group_id = filter_var($_POST['group_id'], FILTER_SANITIZE_NUMBER_INT);
+    $group_id = filter_var($_POST['group_chat_id'], FILTER_SANITIZE_NUMBER_INT);
 
-    // Prepare the SQL statement
-    $sql = "SELECT message_id, message, member_id FROM messages WHERE group_chat_id = ?";
+    // Prepare the SQL statement with a JOIN clause
+    $sql = "SELECT m.message_id, m.message, m.group_member_id, m.time, gm.nickname
+            FROM messages m
+            JOIN group_member_table gm ON m.group_member_id = gm.group_member_id
+            WHERE m.group_chat_id = ? order by m.time";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $group_id);
     $stmt->execute();
