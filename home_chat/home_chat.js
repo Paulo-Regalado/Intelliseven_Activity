@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.json())
             .then(data => {
 
+                console.log('Group Names:', data);
+
                 // Check if there are any group names
                 if (data.length > 0) {
                     // Set the first group name as the default
@@ -52,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Loop through the data and update the HTML elements
                 data.forEach(group => {
                     const groupName = group.group_name;
+                    const latest_msg = group.message;
 
 
                     // Create a new div element
@@ -67,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             </div>
                             <div class="ps-4">
                                 <span class="name">${groupName}</span>
-                                <p>James: Already change your schedule atty.</p>
+                                <p class="nickname">James: Already change your schedule atty.</p>
                             </div>
                             <div class="ms-2">
 
@@ -120,6 +123,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 });
 
+
+                var groupChatId;
                 // Add the event listener to the .inbox_mess div
                 const inboxMessElements = document.querySelectorAll('.inbox_mess');
                 inboxMessElements.forEach((element, index) => {
@@ -127,8 +132,17 @@ document.addEventListener("DOMContentLoaded", function () {
                         updateGroupName(data[index].group_name);
                         updateGroupName(data[index].group_name);
                         fetchGroupMessages(data[index].group_chat_id);
+                        groupChatId = data[index].group_chat_id;
                     });
                 });
+
+                document.getElementById('sendButton').addEventListener('click', function () {
+                    //const groupChatId = /* Get the current group chat id */; // You need to get the current group chat id here
+                    sendMessage(groupChatId);
+                    console.log('Group Chat ID:', groupChatId);
+                });
+
+
 
 
             })
@@ -203,12 +217,14 @@ document.addEventListener("DOMContentLoaded", function () {
         return messageDiv;
     }
 
-    window.sendMessage = function () {
+    window.sendMessage = function (groupChatID) {
 
         const message = document.getElementById('new_message').value;
 
         const formData = new FormData();
         formData.append('message', message);
+        formData.append('group_chat_id', groupChatID);
+
 
         fetch('../home_chat/sendMessage.php', {
             method: 'POST',
@@ -217,8 +233,8 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.json())
             .then(data => {
                 console.log('Message sent:', data);
-                var groupchatID = 1;
-                fetchGroupMessages(groupchatID);
+
+                fetchGroupMessages(groupChatID);
                 document.getElementById('new_message').value = '';
 
             })

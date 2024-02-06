@@ -8,11 +8,11 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if (isset($_POST['message'])) {
+if (isset($_POST['group_chat_id']) && isset($_POST['message'])) {
 
     $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
 
-    $group_chat_id = 1;
+    $group_chat_id = filter_var($_POST['group_chat_id'], FILTER_SANITIZE_NUMBER_INT);
     $group_member_id = 1;
     date_default_timezone_set('Asia/Manila');
     $time = date('Y-m-d H:i:s');

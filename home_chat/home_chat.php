@@ -120,8 +120,7 @@
                         <i class="bi bi-plus-circle-fill pe-2 text-secondary"></i>
                         <input type="text" name="new_message" id="new_message"
                             class="rounded-pill border-1 border-light w-100">
-                        <button class="btn" onclick="sendMessage()"><i
-                                class="bi bi-send px-2 text-secondary"></i></button>
+                        <button id="sendButton" class="btn p-0"><i class="bi bi-send px-2 text-secondary"></i></button>
                     </div>
                 </div>
 
