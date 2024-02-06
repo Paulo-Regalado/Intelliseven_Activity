@@ -65,125 +65,10 @@
                 <div class="inbox_content">
 
                     <div href="#" class="text-decoration-none text-dark">
-                        <!-- <div class="inbox_mess d-flex mt-2">
-                            <div class="img_container pt-2">
-                                <img src="../resources/Ellipse 8.png" alt="" width="40" height="40">
-                                <img class="secondary_pic" src="../resources/Ellipse 15.png" alt="" width="40"
-                                    height="40">
-                            </div>
-
-                            <div class="ps-4">
-                                <span class="name">SMJ Law Firm</span>
-                                <p>Madel: Already change your schedule atty.</p>
-                            </div>
-                            <div class="ms-2">
-
-                                <div class="active">
-                                    <div class="row">
-                                        <div class="col">
-                                            <i id="active_now" class="bi bi-dot ps-3"></i>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col ps-3">
-                                            <span id="seconds">1m</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div id="more" class="mt-3">
-                                    <button id="more_option" class="btn-sm rounded-circle border-0 bg-light"
-                                        type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        <i class="bi bi-three-dots"></i>
-                                    </button>
-
-                                    <div id="more_menu_option" class="dropdown-menu"
-                                        aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#"><button
-                                                class="rounded-circle border-0 me-2"><i
-                                                    class="bi bi-check2-all"></i></button>Mark as read</a>
-                                        <a class="dropdown-item" href="#"><button
-                                                class="rounded-circle border-0 me-2"><i
-                                                    class="bi bi-bell-slash"></i></button>Mute as notifications</a>
-                                        <a class="dropdown-item" href="#"><button
-                                                class="rounded-circle border-0 me-2"><i
-                                                    class="bi bi-trash3"></i></button>Delete Chat</a>
-                                        <a class="dropdown-item" href="#"><button
-                                                class="rounded-circle border-0 me-2"><i
-                                                    class="bi bi-exclamation-octagon"></i></button>Report</a>
-                                        <a class="dropdown-item" href="#"><button
-                                                class="rounded-circle border-0 me-2"><i
-                                                    class="bi bi-box-arrow-right"></i></button>Leave group</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
 
                         <div id="groupList"></div>
+
                     </div>
-
-
-                    <!-- <div href="#" class="text-decoration-none text-dark">
-                        <div class="inbox_mess d-flex mt-2">
-                            <div class="img_container pt-2">
-                                <img src="../resources/Ellipse 8.png" alt="" width="40" height="40">
-                                <img class="secondary_pic" src="../resources/Ellipse 15.png" alt="" width="40"
-                                    height="40">
-                            </div>
-
-                            <div class="ps-4">
-                                <span class="name">SMJ Law Firm</span>
-                                <p>Madel: Already change your schedule atty.</p>
-                            </div>
-                            <div class="ms-2">
-
-                                <div class="active">
-                                    <div class="row">
-                                        <div class="col">
-                                            <i id="active_now" class="bi bi-dot ps-3"></i>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col ps-3">
-                                            <span id="seconds">1m</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div id="more" class="mt-3">
-                                    <button id="more_option" class="btn-sm rounded-circle border-0 bg-light"
-                                        type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        <i class="bi bi-three-dots"></i>
-                                    </button>
-
-                                    <div id="more_menu_option" class="dropdown-menu"
-                                        aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#"><button
-                                                class="rounded-circle border-0 me-2"><i
-                                                    class="bi bi-check2-all"></i></button>Mark as read</a>
-                                        <a class="dropdown-item" href="#"><button
-                                                class="rounded-circle border-0 me-2"><i
-                                                    class="bi bi-bell-slash"></i></button>Mute as notifications</a>
-                                        <a class="dropdown-item" href="#"><button
-                                                class="rounded-circle border-0 me-2"><i
-                                                    class="bi bi-trash3"></i></button>Delete Chat</a>
-                                        <a class="dropdown-item" href="#"><button
-                                                class="rounded-circle border-0 me-2"><i
-                                                    class="bi bi-exclamation-octagon"></i></button>Report</a>
-                                        <a class="dropdown-item" href="#"><button
-                                                class="rounded-circle border-0 me-2"><i
-                                                    class="bi bi-box-arrow-right"></i></button>Leave group</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
-
 
                 </div>
             </div>
@@ -214,32 +99,6 @@
                     </div>
                 </div>
 
-                <!-- Message Content -->
-                <!-- <div id="content" class="row p-2">
-                    <div class="col">
-                        <div class="row">
-                            <div class="col text-center">
-                                <span id="date">Sun, Aug 20 at 5:45 PM</span>
-                            </div>
-                        </div>
-
-
-                        <div class="w-50">
-
-                            <div class="row mb-3">
-                                <div id="receivedMessageContainer"></div>
-                            </div>
-
-                        </div>
-
-
-
-                        <div class="row mb-3">
-                            <div id="sentMessageContainer"></div>
-                        </div>
-                    </div>
-
-                </div> -->
 
 
                 <div id="content" class="row p-2">
@@ -259,8 +118,10 @@
                 <div id="message" class="row border">
                     <div class="col d-flex align-items-center">
                         <i class="bi bi-plus-circle-fill pe-2 text-secondary"></i>
-                        <input type="text" name="" id="" class="rounded-pill border-1 border-light w-100">
-                        <i class="bi bi-send px-2 text-secondary"></i>
+                        <input type="text" name="new_message" id="new_message"
+                            class="rounded-pill border-1 border-light w-100">
+                        <button class="btn" onclick="sendMessage()"><i
+                                class="bi bi-send px-2 text-secondary"></i></button>
                     </div>
                 </div>
 
