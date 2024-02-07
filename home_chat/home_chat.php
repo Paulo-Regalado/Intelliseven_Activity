@@ -105,7 +105,7 @@
                     <div class="col">
                         <div class="row">
                             <div class="col text-center">
-                                <span id="date">Sun, Aug 20 at 5:45 PM</span>
+                                <span id="date"></span>
                             </div>
                         </div>
 
@@ -320,6 +320,12 @@
         crossorigin="anonymous"></script>
 
     <script src="../home_chat/home_chat.js"></script>
+
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetchGroupNames();
+        });
+    </script> -->
 </body>
 
 </html>

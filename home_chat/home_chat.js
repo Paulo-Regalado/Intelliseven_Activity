@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+    let groupChatId;
     // Function to fetch group names from the database
     function fetchGroupNames() {
         fetch('../home_chat/getGroupName.php')
@@ -51,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const defaultGroupName = data[0].group_name;
                     updateGroupName(defaultGroupName);
                     fetchGroupMessages(data[0].group_chat_id);
+                    groupChatId = data[0].group_chat_id;
                 }
                 // Loop through the data and update the HTML elements
                 data.forEach(group => {
@@ -128,23 +130,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
 
 
-                var groupChatId;
+
                 // Add the event listener to the .inbox_mess div
                 const inboxMessElements = document.querySelectorAll('.inbox_mess');
                 inboxMessElements.forEach((element, index) => {
                     element.addEventListener('click', () => {
-                        updateGroupName(data[index].group_name);
                         updateGroupName(data[index].group_name);
                         fetchGroupMessages(data[index].group_chat_id);
                         groupChatId = data[index].group_chat_id;
                     });
                 });
 
-                document.getElementById('sendButton').addEventListener('click', function () {
-                    //const groupChatId = /* Get the current group chat id */; // You need to get the current group chat id here
-                    sendMessage(groupChatId);
-                    console.log('Group Chat ID:', groupChatId);
-                });
+
 
 
 
@@ -152,6 +149,17 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch(error => console.error('Error fetching group names:', error));
     }
+
+    // Add event listener to the send button
+    document.getElementById('sendButton').addEventListener('click', function () {
+        //const groupChatId = /* Get the current group chat id */; // You need to get the current group chat id here
+        if (groupChatId !== undefined) {
+            sendMessage(groupChatId);
+            console.log('Group Chat ID:', groupChatId);
+        } else {
+            console.error('Group Chat ID is undefined. Please select a group.');
+        }
+    });
 
     // Function to update the group name in the message section
     function updateGroupName(groupName) {
@@ -180,9 +188,32 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Create message elements and append them dynamically
                 const messageContainer = document.getElementById('messageContainer');
                 messageContainer.innerHTML = '';
+
+                let previousDate = null;
+
                 sortedMessages.forEach((message) => {
+                    const messageDate = new Date(message.time);
+                    const currentDate = new Date();
+
+                    // Check if the difference between the current date and message date is greater than or equal to 2 hours
+                    const isNewDayOrGap = previousDate === null || (currentDate - previousDate) / (1000 * 60 * 60) >= 2;
+
+                    console.log("Date", isNewDayOrGap);
+                    // Format the date string to include both date and time
+                    const formattedDate = messageDate.toLocaleString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }) + ' at ' + messageDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+
+                    // Display the date if it's a new day or there's a gap of at least 2 hours
+                    if (isNewDayOrGap) {
+                        const dateElement = document.createElement('div');
+                        dateElement.classList.add('row', 'text-center', 'mb-3');
+                        dateElement.innerHTML = `<div class="col"><span id="date" class="message-date">${formattedDate}</span></div>`;
+                        messageContainer.appendChild(dateElement);
+                    }
+
                     const messageElement = createMessageElement(message.message, message.nickname, message.group_member_id);
                     messageContainer.appendChild(messageElement);
+
+                    previousDate = messageDate; // Update previous date
                 });
 
             })
@@ -191,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // Function to create a message element based on the provided message object
+    // Function to create a message element based on the group member id
     function createMessageElement(message, nickname, group_member_id) {
         const messageDiv = document.createElement('div');
         messageDiv.classList.add('row', 'mb-3');
@@ -223,6 +254,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+    // Call the fetchGroupNames function when the page loads
+    fetchGroupNames();
+
+    //function for sending message
     window.sendMessage = function (groupChatID) {
 
         const message = document.getElementById('new_message').value;
@@ -240,6 +276,12 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 console.log('Message sent:', data);
 
+                // Clear existing content of groupList
+                document.getElementById('groupList').innerHTML = '';
+
+                // Fetch group names again
+                fetchGroupNames();
+
                 fetchGroupMessages(groupChatID);
                 document.getElementById('new_message').value = '';
 
@@ -247,9 +289,5 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => console.error('Error sending message:', error));
 
     }
-
-    // Call the fetchGroupNames function when the page loads
-    fetchGroupNames();
-
 
 });
