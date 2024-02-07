@@ -271,6 +271,8 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
         }
 
+        setTimeout(scrollToBottom, 40);
+
         return messageDiv;
     }
 
@@ -283,7 +285,8 @@ document.addEventListener("DOMContentLoaded", function () {
     //function for sending message
     window.sendMessage = function (groupChatID) {
 
-        const message = document.getElementById('new_message').value;
+        let message = document.getElementById('new_message').value;
+        message = message === null || message === '' ? ' ' : message;
 
         const formData = new FormData();
         formData.append('message', message);
@@ -306,6 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 fetchGroupMessages(groupChatID);
                 document.getElementById('new_message').value = '';
+                setTimeout(scrollToBottom, 40);
 
             })
             .catch(error => console.error('Error sending message:', error));
@@ -364,7 +368,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.onload = function () {
         console.log("Bottom Scroll");
-        setTimeout(scrollToBottom, 100); // Adjust the delay time as needed
+        setTimeout(scrollToBottom, 40); // Adjust the delay time as needed
     };
 
 
