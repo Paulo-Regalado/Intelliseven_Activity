@@ -350,20 +350,8 @@
             $('#deleteModal').modal('hide');
 
         });
-
-
-        window.onload = function () {
-            var chatContainer = document.getElementById('content');
-            chatContainer.scrollTop = chatContainer.scrollHeight;
-        }
-
     </script>
 
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            fetchGroupNames();
-        });
-    </script> -->
 </body>
 
 </html>

@@ -351,4 +351,21 @@ document.addEventListener("DOMContentLoaded", function () {
         $('#deleteModal').modal('hide');
     });
 
+
+    // Function to scroll to the bottom of the message container
+    function scrollToBottom() {
+        var messageContainer = document.getElementById("content");
+        if (messageContainer) {
+            messageContainer.scrollTop = messageContainer.scrollHeight;
+        } else {
+            console.error("Element with ID 'content' not found.");
+        }
+    }
+
+    window.onload = function () {
+        console.log("Bottom Scroll");
+        setTimeout(scrollToBottom, 100); // Adjust the delay time as needed
+    };
+
+
 });
