@@ -58,8 +58,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 data.forEach(group => {
                     const groupName = group.group_name;
                     const latest_msg = group.message;
+                    const nickname = group.nickname;
 
-                    const trimmed_msg = latest_msg.length > 35 ? latest_msg.substring(0, 35) + "..." : latest_msg;
+                    const trimmed_msg = latest_msg && latest_msg.length > 35 ? latest_msg.substring(0, 35) + "..." : latest_msg;
+                    const nicknameValue = (latest_msg === null || latest_msg === "") ? "Chas has been created" : nickname;
+
+                    // Conditionally set the content of the p element and its class
+                    const pContent = (trimmed_msg || nicknameValue) ? `${nicknameValue}${trimmed_msg ? `: ${trimmed_msg}` : ''}` : "Chat has been created";
+                    const pClass = (trimmed_msg || nicknameValue) ? "nickname" : "chat-created";
+
+
 
 
 
@@ -76,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             </div>
                             <div class="ps-4">
                                 <span class="name">${groupName}</span>
-                                <p class="nickname">Paulo: ${trimmed_msg}</p>
+                                <p class="${pClass}">${pContent}</p>
                             </div>
                             <div class="ms-2">
 
@@ -108,9 +116,8 @@ document.addEventListener("DOMContentLoaded", function () {
                                     <a class="dropdown-item" href="#"><button
                                             class="rounded-circle border-0 me-2"><i
                                                 class="bi bi-bell-slash"></i></button>Mute as notifications</a>
-                                    <a class="dropdown-item" href="#"><button
-                                            class="rounded-circle border-0 me-2"><i
-                                                class="bi bi-trash3"></i></button>Delete Chat</a>
+                                                <a id="deleteChatBtn" class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#deleteModal" data-group-chat-id="${group.group_chat_id}">
+                                                <button class="rounded-circle border-0 me-2"><i class="bi bi-trash3"></i></button>Delete Chat</a>
                                     <a class="dropdown-item" href="#"><button
                                             class="rounded-circle border-0 me-2"><i
                                                 class="bi bi-exclamation-octagon"></i></button>Report</a>
@@ -126,6 +133,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     // Append the new div to the parent element
                     document.getElementById('groupList').appendChild(newDiv);
+
+                    // Add event listener to delete chat button
+                    const deleteChatBtn = newDiv.querySelector('#deleteChatBtn');
+                    deleteChatBtn.addEventListener('click', function () {
+                        $('#deleteModal').modal('show');
+                    });
+
+                    // Add event listener to delete chat button
+                    const deleteChatBtns = document.querySelectorAll('.dropdown-item[data-bs-toggle="modal"]');
+                    deleteChatBtns.forEach(deleteChatBtn => {
+                        deleteChatBtn.addEventListener('click', function () {
+                            currentGroupChatId = this.getAttribute('data-group-chat-id');
+                        });
+                    });
 
                 });
 
@@ -149,6 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch(error => console.error('Error fetching group names:', error));
     }
+
 
     // Add event listener to the send button
     document.getElementById('sendButton').addEventListener('click', function () {
@@ -195,10 +217,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     const messageDate = new Date(message.time);
                     const currentDate = new Date();
 
+
                     // Check if the difference between the current date and message date is greater than or equal to 2 hours
                     const isNewDayOrGap = previousDate === null || (currentDate - previousDate) / (1000 * 60 * 60) >= 2;
 
-                    console.log("Date", isNewDayOrGap);
                     // Format the date string to include both date and time
                     const formattedDate = messageDate.toLocaleString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }) + ' at ' + messageDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
 
@@ -289,5 +311,44 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => console.error('Error sending message:', error));
 
     }
+
+
+
+    window.deleteChat = function () {
+        console.log("Deleting chat...");
+    }
+
+    // Function to handle deletion of chat
+    function deleteChat() {
+        console.log('Deleting chat with group chat ID:', currentGroupChatId);
+
+        let formData = new FormData();
+        formData.append('group_chat_id', currentGroupChatId);
+
+        fetch('../home_chat/deleteGroupChat.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Chat deleted:', data);
+
+                // Clear existing content of groupList
+                document.getElementById('groupList').innerHTML = '';
+
+                // Fetch group names again
+                fetchGroupNames();
+
+                fetchGroupMessages(groupChatId);
+            })
+            .catch(error => console.error('Error deleting chat:', error));
+
+    }
+
+    // Add event listener to confirm delete button in the modal
+    document.getElementById('confirmDelete').addEventListener('click', function () {
+        deleteChat();
+        $('#deleteModal').modal('hide');
+    });
 
 });
