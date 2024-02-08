@@ -200,12 +200,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
+    let currentGroupChatID;
     // Function to fetch group messages from the database based on group_id
     function fetchGroupMessages(groupchatID) {
         let formData = new FormData();
         formData.append('group_chat_id', groupchatID);
-
+        currentGroupChatID = groupchatID;
         fetch('../home_chat/getGroupMessages.php', {
             method: 'POST',
             body: formData
@@ -253,9 +253,35 @@ document.addEventListener("DOMContentLoaded", function () {
                 updateChatPhoto(groupchatID);
                 fetchGroupChatMembers(groupchatID);
 
+                // Add data-group-id attribute to the <a> tag
+                const changeNameBtn = document.getElementById('changeNameBtn');
+                changeNameBtn.setAttribute('data-group-id', groupchatID);
+
+                console.log("Button ID: ", changeNameBtn.getAttribute('data-group-id'));
+
+                // Add event listener to trigger the modal
+                changeNameBtn.addEventListener('click', function () {
+                    $('#changeNameModal').modal('show');
+                });
+
+
+
+
+
+
             })
             .catch(error => console.error('Error fetching group messages:', error));
     }
+
+
+    // Add the event listener outside of fetchGroupMessages
+    const submitNewNameBtn = document.getElementById('submitNewNameBtn');
+    submitNewNameBtn.addEventListener('click', function () {
+        // Use the groupchatID stored in the variable
+        getNewGroupName(currentGroupChatID);
+
+        // Perform further actions with the new group name, such as updating it in the database
+    });
 
 
 
@@ -504,6 +530,49 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log('Error fetching group chat members');
             });
     }
+
+
+    //Changing Group Names  
+    function getNewGroupName(gcID) {
+        // Select the input element by its ID
+        const newNameInput = document.getElementById('new_name');
+
+        // Retrieve the value of the input
+        const newGroupName = newNameInput.value;
+        console.log('New Group Name:', newGroupName);
+        console.log('Group Chat ID:', gcID);
+
+        let formData = new FormData();
+        formData.append('group_chat_id', gcID);
+        formData.append('group_name', newGroupName);
+
+        fetch('../home_chat/changeGroupName.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Group name updated:', data);
+
+                // Clear existing content of groupList
+                document.getElementById('groupList').innerHTML = '';
+
+                // Fetch group names again
+                fetchGroupNames();
+
+                fetchGroupMessages(gcID);
+            })
+            .catch(error => console.error('Error updating group name:', error));
+
+
+
+    }
+
+    // Add event listener to confirm delete button in the modal
+    document.getElementById('submitNewNameBtn').addEventListener('click', function () {
+        deleteChat();
+        $('#changeNameModal').modal('hide');
+    });
 
 
 

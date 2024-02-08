@@ -175,8 +175,8 @@
 
                     <div id="customed_chat_option" class="dropdown-menu-right w-100 d-none"
                         aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                            data-bs-target="#changeNameModal"><button class="rounded-circle border-0 me-2"><i
+                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#changeNameModal"
+                            id="changeNameBtn"><button class="rounded-circle border-0 me-2"><i
                                     class="bi bi-pencil"></i></button>Change chat
                             name</a>
                         <a class="dropdown-item" href="#"><button class="rounded-circle border-0 me-2"><i
@@ -235,17 +235,22 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="changeNameModalLabel">Change Name</h5>
+                                <h5 class="modal-title" id="changeNameModalLabel">Change chat name</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body text-center">
-                                Change Name
+
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="new_name" name="new_name"
+                                        placeholder="name@example.com">
+                                    <label for="floatingInput">Chat name</label>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                                    id="cancelButton">Cancel</button>
-                                <button type="button" class="btn btn-danger" id="">Change</button>
+                                    id="cancelBtn">Cancel</button>
+                                <button type="button" class="btn btn-danger" id="submitNewNameBtn">Save</button>
                             </div>
                         </div>
                     </div>
@@ -276,6 +281,11 @@
     <script>
         document.getElementById('cancelButton').addEventListener('click', function () {
             $('#deleteModal').modal('hide');
+
+        });
+
+        document.getElementById('cancelBtn').addEventListener('click', function () {
+            $('#changeNameModal').modal('hide');
 
         });
     </script>
