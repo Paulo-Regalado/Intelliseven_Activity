@@ -55,12 +55,12 @@ p{
 }
 
 #content{
-    height: 560px;
+    height: 550px;
     overflow-y: auto;
     /* padding: 10px; */
 }
 
-#header_img{
+#message_secondary_pic{
     position: relative;
     top: -10%;
     left: -30%;

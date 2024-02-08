@@ -59,6 +59,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     const groupName = group.group_name;
                     const latest_msg = group.message;
                     const nickname = group.nickname;
+                    const groupChatID = group.group_chat_id;
+
+                    console.log("Pic ID:", groupChatID);
+
 
                     const trimmed_msg = latest_msg && latest_msg.length > 35 ? latest_msg.substring(0, 35) + "..." : latest_msg;
                     const nicknameValue = (latest_msg === null || latest_msg === "") ? "Chas has been created" : nickname;
@@ -79,8 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     newDiv.innerHTML = `
                         <div class="inbox_mess d-flex mt-2">
                             <div class="img_container pt-2">
-                                <img src="../resources/Ellipse 8.png" alt="" width="40" height="40">
-                                <img class="secondary_pic" src="../resources/Ellipse 15.png" alt="" width="40" height="40">
+                                <img id="primary_pic_${groupChatID}" src="" alt="" width="40" height="40">
+                                <img id="secondary_pic_${groupChatID}" class="secondary_pic" src="" alt="" width="40" height="40">
                             </div>
                             <div class="ps-4">
                                 <span class="name">${groupName}</span>
@@ -148,6 +152,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         });
                     });
 
+                    // Call updateProfilePictures for each group
+                    updateProfilePictures(group.group_chat_id);
+
                 });
 
 
@@ -159,8 +166,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         updateGroupName(data[index].group_name);
                         fetchGroupMessages(data[index].group_chat_id);
                         groupChatId = data[index].group_chat_id;
+
+
                     });
                 });
+
 
 
 
@@ -202,6 +212,8 @@ document.addEventListener("DOMContentLoaded", function () {
         })
             .then(response => response.json())
             .then(messages => {
+
+
                 console.log('Group Messages:', messages);
 
                 // Sort messages based on timestamp
@@ -237,6 +249,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     previousDate = messageDate; // Update previous date
                 });
+
+                updateChatPhoto(groupchatID);
 
             })
             .catch(error => console.error('Error fetching group messages:', error));
@@ -279,8 +293,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // Call the fetchGroupNames function when the page loads
-    fetchGroupNames();
 
     //function for sending message
     window.sendMessage = function (groupChatID) {
@@ -303,8 +315,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Clear existing content of groupList
                 document.getElementById('groupList').innerHTML = '';
-
-                // Fetch group names again
                 fetchGroupNames();
 
                 fetchGroupMessages(groupChatID);
@@ -314,12 +324,6 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch(error => console.error('Error sending message:', error));
 
-    }
-
-
-
-    window.deleteChat = function () {
-        console.log("Deleting chat...");
     }
 
     // Function to handle deletion of chat
@@ -335,7 +339,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
             .then(response => response.json())
             .then(data => {
-                console.log('Chat deleted:', data);
+                console.log('Chat deleted');
 
                 // Clear existing content of groupList
                 document.getElementById('groupList').innerHTML = '';
@@ -367,9 +371,78 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     window.onload = function () {
-        console.log("Bottom Scroll");
         setTimeout(scrollToBottom, 40); // Adjust the delay time as needed
     };
+
+    //Function to get the profile picture of last 2 members
+    function updateProfilePictures(groupChatID) {
+
+        let formData = new FormData();
+        formData.append('group_chat_id', groupChatID);
+
+        fetch('../home_chat/getProfilePicture.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Profile Pictures:', data);
+                const profilePic = document.getElementById(`primary_pic_${groupChatID}`);
+                const secondaryPic = document.getElementById(`secondary_pic_${groupChatID}`);
+                if (data.profiles && data.profiles.length >= 1) {
+                    profilePic.src = "../profile_pic/" + data.profiles[0] + ".png";
+                } else {
+                    console.log("No image");
+                }
+                if (data.profiles && data.profiles.length >= 2) {
+                    secondaryPic.src = "../profile_pic/" + data.profiles[1] + ".png";
+
+                } else {
+
+                    console.log("No image");
+                }
+            })
+            .catch(error => console.error('Error fetching profile pictures:', error));
+    }
+
+
+    //Function to get the profile picture of last 2 members
+    function updateChatPhoto(groupChatID) {
+
+        let formData = new FormData();
+        formData.append('group_chat_id', groupChatID);
+
+        fetch('../home_chat/getProfilePicture.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Profile Pictures:', data);
+
+                const message_primary_pic = document.getElementById('message_primary_pic');
+                const message_secondary_pic = document.getElementById('message_secondary_pic');
+                const see_more_primary_pic = document.getElementById('see_more_primary_pic');
+                const see_more_secondary_pic = document.getElementById('see_more_secondary_pic');
+                if (data.profiles && data.profiles.length >= 1) {
+
+                    message_primary_pic.src = "../profile_pic/" + data.profiles[0] + ".png";
+                    see_more_primary_pic.src = "../profile_pic/" + data.profiles[0] + ".png";
+                } else {
+
+                    console.log("No image");
+                }
+                if (data.profiles && data.profiles.length >= 2) {
+                    message_secondary_pic.src = "../profile_pic/" + data.profiles[1] + ".png";
+                    see_more_secondary_pic.src = "../profile_pic/" + data.profiles[1] + ".png";
+                } else {
+                    console.log("No image");
+                }
+            })
+            .catch(error => console.error('Error fetching profile pictures:', error));
+    }
+
+    fetchGroupNames();
 
 
 });

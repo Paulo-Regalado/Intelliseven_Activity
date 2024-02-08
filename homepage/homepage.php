@@ -40,8 +40,9 @@
                     <span class="text-secondary">It makes easy to communicate and <br>ask for help.</span>
                 </div>
 
-                <button type="button" class="btn rounded-pill text-light mt-3" style="background-color:#FF0000">Continue
-                    as Admin</button>
+                <a href="../login/login.php"><button type="button" class="btn rounded-pill text-light mt-3"
+                        style="background-color:#FF0000">Continue
+                        as Admin</button></a>
                 <a href="" class="text-center text-decoration-none mt-1">Switch Account</a>
 
                 <div class="img_container d-flex justify-content-center mt-4">

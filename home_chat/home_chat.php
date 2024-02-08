@@ -81,8 +81,8 @@
                     <div class="col d-flex pt-1">
                         <div class="d-flex align-items-center w-100">
                             <div class="img_wrapper d-flex">
-                                <img src="../resources/Ellipse 8.png" alt="" width="40" height="40">
-                                <img id="header_img" src="../resources/Ellipse 8.png" alt="" width="40" height="40">
+                                <img id="message_primary_pic" src="" alt="" width="40" height="40">
+                                <img id="message_secondary_pic" src="" alt="" width="40" height="40">
 
                             </div>
                             <div>
@@ -157,8 +157,8 @@
             <div id="see_more" class="col-3 border p-3 d-flex flex-column">
 
                 <div class="p-1 mt-4 text-center">
-                    <img src="../resources/Ellipse 8.png" alt="" width="70px" height="70px">
-                    <img src="../resources/Ellipse 15.png" class="group_photo" alt="" width="70px" height="70px">
+                    <img id="see_more_primary_pic" src="" alt="" width="70px" height="70px">
+                    <img id="see_more_secondary_pic" src="" class="group_photo" alt="" width="70px" height="70px">
                     <h5 id="seeMorePlaceHolder" class="mt-3"></h5>
                 </div>
 
