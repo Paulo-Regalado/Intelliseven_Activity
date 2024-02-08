@@ -244,13 +244,14 @@ document.addEventListener("DOMContentLoaded", function () {
                         messageContainer.appendChild(dateElement);
                     }
 
-                    const messageElement = createMessageElement(message.message, message.nickname, message.group_member_id);
+                    const messageElement = createMessageElement(message.message, message.nickname, message.group_member_id, message.profile_pic);
                     messageContainer.appendChild(messageElement);
 
                     previousDate = messageDate; // Update previous date
                 });
 
                 updateChatPhoto(groupchatID);
+                fetchGroupChatMembers(groupchatID);
 
             })
             .catch(error => console.error('Error fetching group messages:', error));
@@ -259,7 +260,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // Function to create a message element based on the group member id
-    function createMessageElement(message, nickname, group_member_id) {
+    function createMessageElement(message, nickname, group_member_id, profile) {
         const messageDiv = document.createElement('div');
         messageDiv.classList.add('row', 'mb-3');
 
@@ -275,7 +276,7 @@ document.addEventListener("DOMContentLoaded", function () {
             messageDiv.innerHTML = `
             <div class="d-flex">
                 <div>
-                    <img src="../resources/Ellipse 12.png" alt="" width="39px" height="39px">
+                    <img src="../profile_pic/${profile}.png" alt="" width="39px" height="39px">
                 </div>
                 <div id="received_container" class="d-flex flex-column ms-2">
                     <span class="person_name ms-2">${nickname}</span>
@@ -392,14 +393,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (data.profiles && data.profiles.length >= 1) {
                     profilePic.src = "../profile_pic/" + data.profiles[0] + ".png";
                 } else {
-                    console.log("No image");
+                    profilePic.src = "../profile_pic/default.png";
                 }
                 if (data.profiles && data.profiles.length >= 2) {
                     secondaryPic.src = "../profile_pic/" + data.profiles[1] + ".png";
 
+
                 } else {
 
-                    console.log("No image");
+                    secondaryPic.src = "../profile_pic/default.png";
                 }
             })
             .catch(error => console.error('Error fetching profile pictures:', error));
@@ -430,17 +432,80 @@ document.addEventListener("DOMContentLoaded", function () {
                     see_more_primary_pic.src = "../profile_pic/" + data.profiles[0] + ".png";
                 } else {
 
-                    console.log("No image");
+                    message_primary_pic.src = "../profile_pic/default.png";
+                    see_more_primary_pic.src = "../profile_pic/default.png";
                 }
                 if (data.profiles && data.profiles.length >= 2) {
                     message_secondary_pic.src = "../profile_pic/" + data.profiles[1] + ".png";
                     see_more_secondary_pic.src = "../profile_pic/" + data.profiles[1] + ".png";
                 } else {
-                    console.log("No image");
+                    message_secondary_pic.src = "../profile_pic/default.png";
+                    see_more_secondary_pic.src = "../profile_pic/default.png";
                 }
             })
             .catch(error => console.error('Error fetching profile pictures:', error));
     }
+
+    /// Function to fetch group chat members dynamically based on group ID
+    function fetchGroupChatMembers(groupId) {
+        let formData = new FormData();
+        formData.append('group_chat_id', groupId);
+
+        fetch('../home_chat/getGroupChatMember.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                const chatMembersOption = document.getElementById('chat_members_option');
+
+                // Check if the container already contains child nodes
+                const hasChildNodes = chatMembersOption.hasChildNodes();
+
+                if (hasChildNodes) {
+                    chatMembersOption.innerHTML = '';
+                }
+
+                const members = data.members;
+                members.forEach(member => {
+                    const { member_name, profile_pic, nickname } = member;
+                    const dropdownItem = document.createElement('a');
+                    dropdownItem.classList.add('dropdown-item');
+
+                    dropdownItem.innerHTML = `
+                <div class="row">
+                    <div class="col-2">
+                        <img id="member_img" src="../profile_pic/${profile_pic}.png" class="rounded-circle me-2" alt="">
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <span class="name">${member_name}</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <span class="sub_text">${nickname}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2 pt-2">
+                        <button class="btn-sm rounded-circle border-0 bg-light" type="button"
+                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="bi bi-three-dots"></i>
+                        </button>
+                    </div>
+                </div>`;
+                    chatMembersOption.appendChild(dropdownItem);
+                });
+            })
+            .catch(error => {
+                console.log('Error fetching group chat members');
+            });
+    }
+
+
 
     fetchGroupNames();
 

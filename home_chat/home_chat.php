@@ -148,8 +148,6 @@
                 </div>
                 <!-- Delete Modal -->
 
-
-
             </div>
             <!-- Message -->
 
@@ -177,8 +175,10 @@
 
                     <div id="customed_chat_option" class="dropdown-menu-right w-100 d-none"
                         aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#"><button class="rounded-circle border-0 me-2"><i
-                                    class="bi bi-pencil"></i></button>Change chat name</a>
+                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                            data-bs-target="#changeNameModal"><button class="rounded-circle border-0 me-2"><i
+                                    class="bi bi-pencil"></i></button>Change chat
+                            name</a>
                         <a class="dropdown-item" href="#"><button class="rounded-circle border-0 me-2"><i
                                     class="bi bi-image"></i></button>Change photo</a>
                         <a class="dropdown-item" href="#"><button class="rounded-circle border-0 me-2"><i
@@ -195,103 +195,6 @@
                     <div id="chat_members_option" class="dropdown-menu-right w-100 d-none"
                         aria-labelledby="dropdownMenuButton">
 
-                        <a class="dropdown-item">
-                            <div class="row">
-                                <div class="col-2">
-                                    <img src="../resources/Ellipse 13.png" class="rounded-circle me-2" alt="">
-                                </div>
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col">
-                                            <span class="name">Joshua Martins</span>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <span class="sub_text">Associate Atty. Martins</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-2 pt-2">
-                                    <button class="btn-sm rounded-circle border-0 bg-light" type="button"
-                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        <i class="bi bi-three-dots"></i>
-                                    </button>
-                                </div>
-
-                            </div>
-                        </a>
-
-                        <a class="dropdown-item">
-                            <div class="row">
-                                <div class="col-2">
-                                    <img src="../resources/Ellipse 17.png" class="rounded-circle me-2" alt="">
-                                </div>
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col">
-                                            <span class="name">Marvin Malsada</span>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <span class="sub_text">Associate Atty.Marvin</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-2 pt-2">
-                                    <button class="btn-sm rounded-circle border-0 bg-light" type="button"
-                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        <i class="bi bi-three-dots"></i>
-                                    </button>
-                                </div>
-
-                            </div>
-                        </a>
-
-
-                        <a class="dropdown-item">
-                            <div class="row">
-                                <div class="col-2">
-                                    <img src="../resources/Ellipse 16.png" class="rounded-circle me-2" alt="">
-                                </div>
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col">
-                                            <span class="name">Raphael Sy</span>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <span class="sub_text">Legal Atty. Raphael</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-2 pt-2">
-                                    <button class="btn-sm rounded-circle border-0 bg-light" type="button"
-                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        <i class="bi bi-three-dots"></i>
-                                    </button>
-                                </div>
-
-                            </div>
-                        </a>
-
-
-                        <!-- <a class="dropdown-item" href="#"></a>
-                        <a class="dropdown-item" href="#"><img src="../resources/Ellipse 17.png"
-                                class="rounded-circle me-2" alt="">Marvin Malsada <span
-                                class="sub_title text-secondary">Associate
-                                Atty.
-                                Martins</span></a>
-                        <a class="dropdown-item" href="#"><img src="../resources/Ellipse 16.png"
-                                class="rounded-circle me-2" alt="">Raphael Sy <span
-                                class="sub_title text-secondary">Associate
-                                Atty.
-                                Martins</span></a> -->
 
                     </div>
 
@@ -324,6 +227,31 @@
 
 
                 </div>
+
+
+                <!-- Change Chat Name Modal -->
+                <div class="modal fade" id="changeNameModal" tabindex="-1" aria-labelledby="changeNameModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="changeNameModalLabel">Change Name</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-center">
+                                Change Name
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                    id="cancelButton">Cancel</button>
+                                <button type="button" class="btn btn-danger" id="">Change</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Change Chat Name Modal -->
+
 
             </div>
             <!-- See More -->

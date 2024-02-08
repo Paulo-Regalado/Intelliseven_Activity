@@ -13,10 +13,12 @@ if (isset($_POST['group_chat_id'])) {
     $group_id = filter_var($_POST['group_chat_id'], FILTER_SANITIZE_NUMBER_INT);
 
     // Prepare the SQL statement with a JOIN clause
-    $sql = "SELECT m.message_id, m.message, m.group_member_id, m.time, gm.nickname
-            FROM messages m
-            JOIN group_member_table gm ON m.group_member_id = gm.group_member_id
-            WHERE m.group_chat_id = ? order by m.time";
+    $sql = "SELECT m.message_id, m.message, m.group_member_id, m.time, gm.nickname, gm.profile_pic
+    FROM messages m
+    JOIN group_member_table gm ON m.group_member_id = gm.group_member_id
+    WHERE m.group_chat_id = ?
+    ORDER BY m.time";
+
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $group_id);
     $stmt->execute();
